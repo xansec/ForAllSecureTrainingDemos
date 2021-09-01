@@ -1,0 +1,11 @@
+version: '1.9'
+baseimage: '$MAYHEM_DOCKER_REGISTRY/forallsecure/tutorial/lighttpd:1.4.52'
+duration: 120
+project: abrewer/lighttpd
+target: vulnerable
+cmds:
+  - cmd: /usr/local/sbin/lighttpd -D -f /usr/local/etc/lighttpd.conf
+    network:
+      url: 'tcp://localhost:80'
+      timeout: 2
+      is_client: false
