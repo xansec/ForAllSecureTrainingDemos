@@ -1,0 +1,96 @@
+<?xml version="1.0" ?>
+<testsuites disabled="0" errors="0" failures="0" tests="13" time="0.0">
+	<testsuite disabled="0" errors="0" failures="0" name="fuzzme-c-base" skipped="0" tests="13" time="0">
+		<testcase name="ecb53f367b3541da3a14236d9a091f9bcc7a9903953f36577c2664fdd2a68a55">
+			<system-out>Standard Out:
+You've got it!
+Standard Error: (empty)
+
+</system-out>
+		</testcase>
+		<testcase name="13d92e810238e2042dd290f76c0db92f60d0fc56b956e9a67199ad918100875e">
+			<system-out>Standard Out:
+You've got it!
+Standard Error: (empty)
+
+</system-out>
+		</testcase>
+		<testcase name="5b7aa7434ee55a2c28dc2a377b4f80334e6e40840d7f33008d6590d0472a8513">
+			<system-out>Standard Out: (empty)
+
+Standard Error: (empty)
+
+</system-out>
+		</testcase>
+		<testcase name="4333ac0a9369b2e7cd51ae17e071e04af327b593b0688d65c74d33aca734b40a">
+			<system-out>Standard Out: (empty)
+
+Standard Error: (empty)
+
+</system-out>
+		</testcase>
+		<testcase name="16aa2c33ef52d5d47e2c0dd2188424c9c1c37f0742b84b709184cda14695532c">
+			<system-out>Standard Out: (empty)
+
+Standard Error: (empty)
+
+</system-out>
+		</testcase>
+		<testcase name="4eb6cba6e6b868968b8829cfef60bd15ffc75531522c73f3f76e9167ecc5ea67">
+			<system-out>Standard Out: (empty)
+
+Standard Error: (empty)
+
+</system-out>
+		</testcase>
+		<testcase name="ac0b52a2ae6ef99999bc08fb31e19188bf0085a4614204068e677e140e1458be">
+			<system-out>Standard Out: (empty)
+
+Standard Error: (empty)
+
+</system-out>
+		</testcase>
+		<testcase name="5dd398f848e0e8a55006ed89ec9c0c73f667e584a7890ef45cc18c003fd9ae1f">
+			<system-out>Standard Out: (empty)
+
+Standard Error: (empty)
+
+</system-out>
+		</testcase>
+		<testcase name="01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b">
+			<system-out>Standard Out: (empty)
+
+Standard Error: (empty)
+
+</system-out>
+		</testcase>
+		<testcase name="7d865e959b2466918c9863afca942d0fb89d7c9ac0c99bafc3749504ded97730">
+			<system-out>Standard Out: (empty)
+
+Standard Error: (empty)
+
+</system-out>
+		</testcase>
+		<testcase name="1d7a363ce12430881ec56c9cf1409c49c491043618e598c356e2959040872f5a">
+			<system-out>Standard Out: (empty)
+
+Standard Error: (empty)
+
+</system-out>
+		</testcase>
+		<testcase name="bf5dad1c73abf127daf73e01b2351682f514f82c219efd2ee51fd3166bc91dd0">
+			<system-out>Standard Out:
+You've got it!
+Standard Error: (empty)
+
+</system-out>
+		</testcase>
+		<testcase name="b5bb9d8014a0f9b1d61e21e796d78dccdf1352f23cd32812f4850b878ae4944c">
+			<system-out>Standard Out: (empty)
+
+Standard Error: (empty)
+
+</system-out>
+		</testcase>
+	</testsuite>
+</testsuites>

@@ -1,0 +1,11 @@
+version: '1.13'
+baseimage: 'openapitools/openapi-petstore'
+duration: 120 
+project: openapitools
+target: petstore
+cmds:
+  - cmd: java -Dopenapi.openAPIPetstore.base-path=/v3 -jar /petstore/openapi-petstore.jar
+    network:
+      url: 'tcp://localhost:8080'
+      timeout: 2
+      is_client: false
