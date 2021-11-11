@@ -1,7 +1,7 @@
 version: '1.13'
 baseimage: $MAYHEM_DOCKER_REGISTRY/abrewer/fuzzme/qemu:latest
-duration: 60
+duration: 120
 project: fuzzme
 target: qemu-aarch64
 cmds:
-  - cmd: /usr/bin/qemu-aarch64 /fuzzme @@
+  - cmd: /fuzzme @@
