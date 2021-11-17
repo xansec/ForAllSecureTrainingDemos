@@ -1,0 +1,7 @@
+version: '1.13'
+baseimage: $MAYHEM_DOCKER_REGISTRY/abrewer/fuzzme/c-base
+duration: 120 
+project: fuzzme
+target: c-base
+cmds:
+  - cmd: /fuzzme @@

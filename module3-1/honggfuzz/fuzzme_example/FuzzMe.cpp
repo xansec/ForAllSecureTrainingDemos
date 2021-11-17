@@ -22,6 +22,9 @@ int dontcallme() {
 int HonggfuzzTestOneInput(const uint8_t *data, size_t size)
 {
     FuzzMe(data, size);
-
+    //int neatresult;
+    //if(data[0] > 42) {
+    //	    return dontcallme();
+    //}
     return 0;
 }

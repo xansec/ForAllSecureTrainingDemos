@@ -1,0 +1,32 @@
+---
+  openapi: "3.0.0"
+  info: 
+    version: "1.0"
+    title: "OpenAPI specification converted from HAR"
+    description: "TODO: Add Description"
+  servers: 
+    - 
+      url: "{scheme}://localhost:80/{basePath}"
+      variables: 
+        scheme: 
+          enum: 
+            - "https"
+            - "http"
+          default: "http"
+        basePath: 
+          default: "/v3"
+  tags: []
+  components: 
+    schemas: 
+      ErrorModel: 
+        type: "object"
+        properties: 
+          code: 
+            type: "string"
+    securitySchemes: 
+      JWT: 
+        description: "You can create a JSON Web Token (JWT) during auth.\nUsage format: `Bearer <JWT>`\n"
+        name: "Authorization"
+        type: "apiKey"
+        in: "header"
+  paths: {}
