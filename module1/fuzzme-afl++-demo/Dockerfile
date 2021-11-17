@@ -1,4 +1,5 @@
 FROM fuzzers/aflplusplus:3.12c
+WORKDIR /
 COPY . .
 RUN make 
 

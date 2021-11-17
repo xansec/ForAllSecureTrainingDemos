@@ -4,5 +4,5 @@ duration: 120
 project: fuzzme
 target: c-afl
 cmds:
-  - cmd: /FuzzMe
+  - cmd: /FuzzMe @@
     afl: true
