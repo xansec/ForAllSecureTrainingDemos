@@ -1,9 +1,9 @@
-version: '1.12'
-baseimage: $MAYHEM_DOCKER_REGISTRY/cereal-honggfuzz:0.1
+version: '1.13'
+baseimage: $MAYHEM_DOCKER_REGISTRY/abrewer/cereal/honggfuzz:latest
 duration: 600
 project: cereal-honggfuzz
 target: binary-archive-symmetry
 cmds:
-  - cmd: /cereal/fuzz/binary_archive_symmetry/fuzz_binary_archive_symmetry
+  - cmd: /fuzz/fuzz_binary_archive_symmetry
     honggfuzz: true
     sanitizer: true

@@ -1,10 +1,13 @@
 CXX=hfuzz-g++
 FUZZ=honggfuzz
+HFFLAGS=-fsanitize=address
 
 target:
 	$(CXX) fuzz_binary_archive_symmetry.cpp -o fuzz_binary_archive_symmetry
+sanitizer:
+	$(CXX) $(HFFLAGS) fuzz_binary_archive_symmetry.cpp -o fuzz_binary_archive_symmetry
 fuzz:
-	$(FUZZ) --persistent -i corpus -- fuzz_binary_archive_symmetry
+	$(FUZZ) --persistent --input corpus -- fuzz_binary_archive_symmetry
 build-gcov:
 	$(CXX) --coverage fuzz_binary_archive_symmetry.cpp -c 
 	$(CXX) --coverage fuzz_binary_archive_symmetry.o -o fuzz_binary_archive_symmetry
