@@ -13,11 +13,21 @@ int fuzzme(char *buf)
   return 0;
 }
 
+void dontcallme()
+{
+  int two = 2;
+  int four = two + two;
+  if(four == 4) {
+    printf("Great!");
+  }
+  return;
+}
+
 int main(int argc, char *argv[])
 {
   FILE *f;
   char buf[12];
-
+  
   if(argc != 2){
     fprintf(stderr, "Must supply a text file\n");
     return -1;
