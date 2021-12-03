@@ -1,0 +1,14 @@
+VersionMessage {
+    version: 70002,
+    services: ServiceFlags(
+        1,
+    ),
+    timestamp: 1401217254,
+    receiver: Address {services: ServiceFlags(NETWORK), address: 0.0.0.0, port: 0},
+    sender: Address {services: ServiceFlags(NETWORK), address: fd87:d87e:eb43:64f2:2cf5:4dca:5941:2db7, port: 8333},
+    nonce: 16735069437859780935,
+    user_agent: "/Satoshi:0.9.99/",
+    start_height: 302892,
+    relay: true,
+}
+

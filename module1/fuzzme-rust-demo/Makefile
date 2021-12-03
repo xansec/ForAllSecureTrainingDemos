@@ -7,7 +7,7 @@ base:
 libfuzzer:
 	-cargo init
 	cargo fuzz init --fuzz-dir ./fuzz -t fuzzme-libfuzzer
-	cargo fuzz build --verbose
+	cargo fuzz build 
 
 honggfuzz:
 	-cargo init

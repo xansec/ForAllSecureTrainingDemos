@@ -1,0 +1,8 @@
+version: '1.13'
+baseimage: $MAYHEM_DOCKER_REGISTRY/abrewer/bitcoin/hfuzz
+duration: 120 
+project: bitcoin
+target: hfuzz-serialize
+cmds:
+  - cmd: /bitcoin_hfuzz_serialize
+    honggfuzz: true

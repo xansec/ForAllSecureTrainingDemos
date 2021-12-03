@@ -1,0 +1,25 @@
+[package]
+name = "fuzzme-rust-demo-fuzz"
+version = "0.0.0"
+authors = ["Automatically generated"]
+publish = false
+edition = "2018"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+
+[dependencies.fuzzme-rust-demo]
+path = ".."
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "fuzzme-libfuzzer"
+path = "fuzz_targets/fuzzme-libfuzzer.rs"
+test = false
+doc = false

@@ -2,6 +2,7 @@
 //use honggfuzz::fuzz;
 
 fn main() {
+    loop {
     fuzz!(|data: &[u8]| {
         if data.len() >= 3 {
          if data[0] == 'b' as u8 {
@@ -12,7 +13,8 @@ fn main() {
              }
          }
      }
-    });
+  });
+ }
 }
 
 fn div_by_val(num: i32) -> i32 {
