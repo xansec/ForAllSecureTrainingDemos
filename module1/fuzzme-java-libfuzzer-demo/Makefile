@@ -8,4 +8,5 @@ all:
 
 clean:
 	-rm -rf build FuzzMe.jar
-
+fuzz:
+	docker run -v /home/abrewer/mayhem/demo/module1/fuzzme-java-libfuzzer-demo:/fuzzing cifuzz/jazzer --cp=/fuzzing/FuzzMe.jar --target_class=fuzzme.FuzzMe
