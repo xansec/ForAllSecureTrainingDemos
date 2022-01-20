@@ -1,6 +1,6 @@
 #!/bin/bash
 
 #vulnerable version
-docker run lighttpd:1.14.15
+docker run lighttpd:1.4.15
 #fixed version
-#docker run lighttpd:1.14.52
+#docker run lighttpd:1.4.52
