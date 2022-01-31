@@ -16,8 +16,8 @@
             }
           ],
           "message": {
-            "markdown": "Invalid Response Spec (unable to parse body as xml) in 'GET /pet/{petId}'.\n\n# Sample Request\n\n```http\nGET /v3/pet/8 HTTP/1.1\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 91e57935-c9c1-4ce5-951f-63b10214d677\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:18:54 GMT\n\n<Pet><id>8</id><category><id>4</id><name>Lions</name></category><name>Lion 2</name><photoUrl><photoUrl>url1</photoUrl><photoUrl>url2</photoUrl></photoUrl><tag><tag><id>1</id><name>tag2</name></tag><tag><id>2</id><name>tag3</name></tag></tag><status>available</status></Pet>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275047)\n",
-            "text": "Invalid Response Spec in 'GET /pet/{petId}'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275047)"
+            "markdown": "Invalid Response Spec (unable to parse body as xml) in 'GET /store/order/{orderId}'.\n\n# Sample Request\n\n```http\nGET /v3/store/order/3 HTTP/1.1\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 918133eb-4ff4-43db-8594-e936bc0a58ff\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Sat, 29 Jan 2022 04:41:20 GMT\n\n<Order><id>3</id><petId>2</petId><quantity>2</quantity><shipDate>2022-01-29T04:34:07.805Z</shipDate><status>placed</status><complete>false</complete></Order>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/10149/405033)\n",
+            "text": "Invalid Response Spec in 'GET /store/order/{orderId}'. [Details](https://mayhem4api.forallsecure.com/issues/10149/405033)"
           },
           "ruleId": "invalid-response-spec (unable to parse body as xml)"
         },
@@ -34,8 +34,26 @@
             }
           ],
           "message": {
-            "markdown": "Invalid Response Spec (unspecified status code: 200) in 'DELETE /pet/{petId}'.\n\n# Sample Request\n\n```http\nDELETE /v3/pet/2147483647 HTTP/1.1\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 7762f70c-d5ee-494f-aaed-7a07e6d04bac\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\ncontent-length: 0\ndate: Wed, 17 Nov 2021 22:18:55 GMT\n\nEmpty response\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275048)\n",
-            "text": "Invalid Response Spec in 'DELETE /pet/{petId}'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275048)"
+            "markdown": "Invalid Response Spec (unable to parse body as xml) in 'GET /user/login'.\n\n# Sample Request\n\n```http\nGET /v3/user/login?username=%40%24ngCj1ZH&password=bzmaIiWQg0dX*%2B HTTP/1.1\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 13500baa-19f8-446a-acdd-d23da294715e\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\nx-expires-after: Sat Jan 29 05:41:20 GMT 2022\nx-rate-limit: 5000\ncontent-type: application/xml;charset=UTF-8\ncontent-length: 36\ndate: Sat, 29 Jan 2022 04:41:20 GMT\n\nlogged in user session:1643434880863\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/10149/405034)\n",
+            "text": "Invalid Response Spec in 'GET /user/login'. [Details](https://mayhem4api.forallsecure.com/issues/10149/405034)"
+          },
+          "ruleId": "invalid-response-spec (unable to parse body as xml)"
+        },
+        {
+          "codeFlows": [],
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "unknown-file",
+                  "uriBaseId": "%SRCROOT%"
+                }
+              }
+            }
+          ],
+          "message": {
+            "markdown": "Invalid Response Spec (unspecified status code: 200) in 'DELETE /pet/{petId}'.\n\n# Sample Request\n\n```http\nDELETE /v3/pet/-158 HTTP/1.1\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 1238b26d-15f1-46f6-a787-d3ffcd55e2de\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\ncontent-length: 0\ndate: Sat, 29 Jan 2022 04:41:40 GMT\n\nEmpty response\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/10149/405035)\n",
+            "text": "Invalid Response Spec in 'DELETE /pet/{petId}'. [Details](https://mayhem4api.forallsecure.com/issues/10149/405035)"
           },
           "ruleId": "invalid-response-spec (unspecified status code: 200)"
         },
@@ -52,8 +70,26 @@
             }
           ],
           "message": {
-            "markdown": "Invalid Response Spec (unspecified status code: 200) in 'POST /pet'.\n\n# Sample Request\n\n```http\nPOST /v3/pet HTTP/1.1\ncontent-type: application/json\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 7762f70c-d5ee-494f-aaed-7a07e6d04bac\n\n{\"name\":\"doggie\",\"photoUrls\":[\"str\",\"str\",\"D&3#_YO!0SggP@)}{69\"],\"tags\":[{},{\"id\":1,\"name\":\"name\"},{},{\"id\":1,\"name\":\"name\"},{\"id\":1,\"name\":\"name\"},{\"id\":1,\"name\":\"name\"},{\"name\":\"-+L9t|U##\"},{}]}\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\nx-content-type-options: nosniff\nx-xss-protection: 1; mode=block\ncache-control: no-cache, no-store, max-age=0, must-revalidate\npragma: no-cache\nexpires: 0\nx-frame-options: DENY\ncontent-length: 0\ndate: Wed, 17 Nov 2021 22:18:55 GMT\n\nEmpty response\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275049)\n",
-            "text": "Invalid Response Spec in 'POST /pet'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275049)"
+            "markdown": "Invalid Response Spec (got a non-empty response when an empty response was specified) in 'GET /pet/findByStatus'.\n\n# Sample Request\n\n```http\nGET /v3/pet/findByStatus?status=http%3A%2F%2F127.1.1.1%3A46463%23%5C%40127.2.2.2%3A80%2F%2Csold%2Cavailable%2Csold%2Cavailable%2Csold HTTP/1.1\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 3f585a4d-eedc-46bf-883e-44c22f774b66\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 400 Bad Request\nx-content-type-options: nosniff\nx-xss-protection: 1; mode=block\ncache-control: no-cache, no-store, max-age=0, must-revalidate\npragma: no-cache\nexpires: 0\nx-frame-options: DENY\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Sat, 29 Jan 2022 04:41:46 GMT\nconnection: close\n\n<Map><timestamp>2022-01-29T04:41:46.487Z</timestamp><status>400</status><error>Bad Request</error><message>Invalid status: http://127.1.1.1:46463#\\@127.2.2.2:80/</message><path>/v3/pet/findByStatus</path></Map>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/10149/405036)\n",
+            "text": "Invalid Response Spec in 'GET /pet/findByStatus'. [Details](https://mayhem4api.forallsecure.com/issues/10149/405036)"
+          },
+          "ruleId": "invalid-response-spec (got a non-empty response when an empty response was specified)"
+        },
+        {
+          "codeFlows": [],
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "unknown-file",
+                  "uriBaseId": "%SRCROOT%"
+                }
+              }
+            }
+          ],
+          "message": {
+            "markdown": "Invalid Response Spec (unspecified status code: 200) in 'POST /pet'.\n\n# Sample Request\n\n```http\nPOST /v3/pet HTTP/1.1\ncontent-type: application/json\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 64e0328e-8d18-4d27-aacc-0b104279f2cb\n\n{\"category\":{\"id\":6,\"name\":\"name\"},\"id\":0,\"name\":\"doggie\",\"photoUrls\":[\"photoUrls\",\"photoUrls\"],\"status\":\"available\",\"tags\":[{\"id\":1,\"name\":\"name\"},{\"id\":1,\"name\":\"name\"}]}\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\nx-content-type-options: nosniff\nx-xss-protection: 1; mode=block\ncache-control: no-cache, no-store, max-age=0, must-revalidate\npragma: no-cache\nexpires: 0\nx-frame-options: DENY\ncontent-length: 0\ndate: Sat, 29 Jan 2022 04:41:46 GMT\n\nEmpty response\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/10149/405037)\n",
+            "text": "Invalid Response Spec in 'POST /pet'. [Details](https://mayhem4api.forallsecure.com/issues/10149/405037)"
           },
           "ruleId": "invalid-response-spec (unspecified status code: 200)"
         },
@@ -70,152 +106,8 @@
             }
           ],
           "message": {
-            "markdown": "Invalid Response Spec (unable to parse body as xml) in 'POST /store/order'.\n\n# Sample Request\n\n```http\nPOST /v3/store/order HTTP/1.1\ncontent-type: application/json\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 2b26148c-6692-4891-8d8e-784bf5adb7db\n\n{\"complete\":false,\"id\":0,\"petId\":6,\"quantity\":1,\"shipDate\":\"2000-01-23T04:56:07.000+00:00\",\"status\":\"placed\"}\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:18:55 GMT\n\n<Order><id>0</id><petId>6</petId><quantity>1</quantity><shipDate>2000-01-23T04:56:07Z</shipDate><status>placed</status><complete>false</complete></Order>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275050)\n",
-            "text": "Invalid Response Spec in 'POST /store/order'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275050)"
-          },
-          "ruleId": "invalid-response-spec (unable to parse body as xml)"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Internal Server Error in 'GET /store/inventory'.\n\n# Sample Request\n\n```http\nGET /v3/store/inventory HTTP/1.1\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 9f7289ae-0ab5-462a-84b7-f0cc70788b81\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 500 Internal Server Error\ncontent-type: application/json;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:18:55 GMT\nconnection: close\n\n{\n  \"error\": \"Internal Server Error\",\n  \"message\": \"No message available\",\n  \"path\": \"/v3/store/inventory\",\n  \"status\": 500,\n  \"timestamp\": \"2021-11-17T22:18:55.935Z\"\n}\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275051)\n",
-            "text": "Internal Server Error in 'GET /store/inventory'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275051)"
-          },
-          "ruleId": "internal-server-error"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Invalid Response Spec (unable to parse body as xml) in 'GET /pet/findByStatus'.\n\n# Sample Request\n\n```http\nGET /v3/pet/findByStatus?status= HTTP/1.1\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 9f7289ae-0ab5-462a-84b7-f0cc70788b81\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\nx-content-type-options: nosniff\nx-xss-protection: 1; mode=block\ncache-control: no-cache, no-store, max-age=0, must-revalidate\npragma: no-cache\nexpires: 0\nx-frame-options: DENY\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:18:55 GMT\n\n<List/>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275052)\n",
-            "text": "Invalid Response Spec in 'GET /pet/findByStatus'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275052)"
-          },
-          "ruleId": "invalid-response-spec (unable to parse body as xml)"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Invalid Response Spec (unable to parse body as xml) in 'GET /user/login'.\n\n# Sample Request\n\n```http\nGET /v3/user/login?username=PaAVp%3D%7B%60%3B%5D2qY&password=cnS%22N* HTTP/1.1\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: fddc2da5-a120-4ffe-9919-7df7965c239a\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\nx-expires-after: Wed Nov 17 23:18:56 GMT 2021\nx-rate-limit: 5000\ncontent-type: application/xml;charset=UTF-8\ncontent-length: 36\ndate: Wed, 17 Nov 2021 22:18:55 GMT\n\nlogged in user session:1637191136074\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275053)\n",
-            "text": "Invalid Response Spec in 'GET /user/login'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275053)"
-          },
-          "ruleId": "invalid-response-spec (unable to parse body as xml)"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Invalid Response Spec ($.type: expected string) in 'POST /pet/{petId}/uploadImage'.\n\n# Sample Request\n\n```http\nPOST /v3/pet/-5/uploadImage HTTP/1.1\ncontent-type: multipart/form-data; boundary=8375ca5c5f6abda8-f6a1b126d5ed3e72-4b8e856acb5a05b0-5b2251b6bdb5e3fe\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 40b9b3d5-5c85-46b7-87f8-e6ed92117c25\n\n--8375ca5c5f6abda8-f6a1b126d5ed3e72-4b8e856acb5a05b0-5b2251b6bdb5e3fe\r\nContent-Disposition: form-data; name=\"file\"; filename=\"file.txt\"\r\nContent-Type: application/octet-stream\r\n\r\n\"]XJ\\\\n^Gpz]\\\"ww^x@\"\r\n--8375ca5c5f6abda8-f6a1b126d5ed3e72-4b8e856acb5a05b0-5b2251b6bdb5e3fe--\r\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\nx-content-type-options: nosniff\nx-xss-protection: 1; mode=block\ncache-control: no-cache, no-store, max-age=0, must-revalidate\npragma: no-cache\nexpires: 0\nx-frame-options: DENY\ncontent-type: application/json;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:18:55 GMT\n\n{\n  \"code\": 200,\n  \"message\": \"additionalMetadata: null\\nFile uploaded to ./file, 20 bytes\",\n  \"type\": null\n}\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275054)\n",
-            "text": "Invalid Response Spec in 'POST /pet/{petId}/uploadImage'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275054)"
-          },
-          "ruleId": "invalid-response-spec ($.type: expected string)"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Internal Server Error in 'POST /user/createWithList'.\n\n# Sample Request\n\n```http\nPOST /v3/user/createWithList HTTP/1.1\ncontent-type: application/json\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: fcbe66e3-149b-40f5-9db4-8fb021535f44\n\n[{\"email\":\"email\",\"firstName\":\"firstName\",\"id\":0,\"lastName\":\"lastName\",\"password\":\"password\",\"phone\":\"phone\",\"userStatus\":6,\"username\":\"username\"},{\"email\":\"email\",\"firstName\":\"firstName\",\"id\":0,\"lastName\":\"lastName\",\"password\":\"password\",\"phone\":\"phone\",\"userStatus\":6,\"username\":\"username\"},{\"email\":\"email\",\"firstName\":\"firstName\",\"id\":0,\"lastName\":\"lastName\",\"password\":\"password\",\"phone\":\"phone\",\"userStatus\":6,\"username\":\"username\"},{\"email\":\"email\",\"firstName\":\"firstName\",\"id\":0,\"lastName\":\"lastName\",\"password\":\"password\",\"phone\":\"phone\",\"userStatus\":6,\"username\":\"username\"},{\"lastName\":\"fK9xsZgaD@g'W^I)\"},{\"email\":\"SjFDwVk@8ua0fdZ.nan\",\"firstName\":\"str\",\"id\":127,\"lastName\":\"str\",\"password\":\"str\",\"phone\":\"+24\\u000b(397.860\\r7427\"}]\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 500 Internal Server Error\ncontent-type: application/json;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:18:55 GMT\nconnection: close\n\n{\n  \"error\": \"Internal Server Error\",\n  \"message\": \"entity ID cannot be null\",\n  \"path\": \"/v3/user/createWithList\",\n  \"status\": 500,\n  \"timestamp\": \"2021-11-17T22:18:56.238Z\"\n}\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275055)\n",
-            "text": "Internal Server Error in 'POST /user/createWithList'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275055)"
-          },
-          "ruleId": "internal-server-error"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Internal Server Error in 'DELETE /store/order/{orderId}'.\n\n# Sample Request\n\n```http\nDELETE /v3/store/order/Crm1XWm-BBWTrtCt%3C' HTTP/1.1\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 13dd2a9e-26c7-44ab-9c3c-4d7ac0a8ae7c\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 500 Internal Server Error\ncontent-type: application/json;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:18:55 GMT\nconnection: close\n\n{\n  \"error\": \"Internal Server Error\",\n  \"message\": \"For input string: \\\"Crm1XWm-BBWTrtCt<'\\\"\",\n  \"path\": \"/v3/store/order/Crm1XWm-BBWTrtCt%3C'\",\n  \"status\": 500,\n  \"timestamp\": \"2021-11-17T22:18:56.369Z\"\n}\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275056)\n",
-            "text": "Internal Server Error in 'DELETE /store/order/{orderId}'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275056)"
-          },
-          "ruleId": "internal-server-error"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Invalid Response Spec (unable to parse body as xml) in 'GET /pet/findByTags'.\n\n# Sample Request\n\n```http\nGET /v3/pet/findByTags?tags=%F3%80%9D%9E%F3%B4%B7%B7%EE%AA%B9%F3%9C%A4%A2%F2%A4%8A%9F%F0%A9%86%81%F1%80%8A%92%2C6hvQPk9k%23nLFhtOA%2CRrg%7EO4SIGQh%25%29%2C%F3%A1%A6%AB%E2%8A%A2%F3%81%85%89%F3%A2%B3%B3%F0%9D%92%AC%F2%9A%BB%99%F1%8F%A7%AE%2CRNK%3BaF3wC%7E%2Cstr%2CC4%29%7DYZj%24%29z%3D%2Cstr%2Cstr%2C%F1%BF%A4%BB%F3%9B%B8%8C%F2%9F%A2%A6%F1%86%A7%9A%F3%B2%B2%B7%F2%B4%AB%98%F1%A3%A5%98 HTTP/1.1\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 6c119415-4371-4289-8741-453fdd011694\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:18:55 GMT\n\n<List/>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275057)\n",
-            "text": "Invalid Response Spec in 'GET /pet/findByTags'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275057)"
-          },
-          "ruleId": "invalid-response-spec (unable to parse body as xml)"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Invalid Response Spec (unspecified status code: 200) in 'PUT /pet'.\n\n# Sample Request\n\n```http\nPUT /v3/pet HTTP/1.1\ncontent-type: application/json\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 60f9f1b4-6fb1-4819-900e-19d1acdd034c\n\n{\"category\":{\"id\":6,\"name\":\"name\"},\"id\":0,\"name\":\"doggie\",\"photoUrls\":[\"photoUrls\",\"photoUrls\"],\"status\":\"available\",\"tags\":[{\"id\":1,\"name\":\"name\"},{\"id\":1,\"name\":\"name\"}]}\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\nx-content-type-options: nosniff\nx-xss-protection: 1; mode=block\ncache-control: no-cache, no-store, max-age=0, must-revalidate\npragma: no-cache\nexpires: 0\nx-frame-options: DENY\ncontent-length: 0\ndate: Wed, 17 Nov 2021 22:18:55 GMT\n\nEmpty response\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275058)\n",
-            "text": "Invalid Response Spec in 'PUT /pet'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275058)"
+            "markdown": "Invalid Response Spec (unspecified status code: 200) in 'PUT /user/{username}'.\n\n# Sample Request\n\n```http\nPUT /v3/user/as= HTTP/1.1\ncontent-type: application/json\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: a9d28912-d644-4390-a7ca-f5b1b4045ff7\n\n{\"password\":\"'k=y5h'<wrSLXsg\",\"phone\":\"343.064\\f0068\",\"userStatus\":-5}\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\ncontent-length: 0\ndate: Sat, 29 Jan 2022 04:41:51 GMT\n\nEmpty response\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/10149/405038)\n",
+            "text": "Invalid Response Spec in 'PUT /user/{username}'. [Details](https://mayhem4api.forallsecure.com/issues/10149/405038)"
           },
           "ruleId": "invalid-response-spec (unspecified status code: 200)"
         },
@@ -232,10 +124,10 @@
             }
           ],
           "message": {
-            "markdown": "Invalid Response Spec (unspecified status code: 400) in 'POST /pet/{petId}/uploadImage'.\n\n# Sample Request\n\n```http\nPOST /v3/pet/-9/uploadImage HTTP/1.1\ncontent-type: multipart/form-data; boundary=293abd3fb8425bcd-5ea22ddd16a53b79-af3a844c21edac1d-b4fdee0904bbd0bf\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: f95654a0-3f39-46e9-bf15-3307ef627a6e\n\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 400 Bad Request\nx-content-type-options: nosniff\nx-xss-protection: 1; mode=block\ncache-control: no-cache, no-store, max-age=0, must-revalidate\npragma: no-cache\nexpires: 0\nx-frame-options: DENY\ncontent-type: application/json;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:18:55 GMT\nconnection: close\n\n{\n  \"error\": \"Bad Request\",\n  \"message\": \"Required request part 'file' is not present\",\n  \"path\": \"/v3/pet/-9/uploadImage\",\n  \"status\": 400,\n  \"timestamp\": \"2021-11-17T22:18:56.479Z\"\n}\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275059)\n",
-            "text": "Invalid Response Spec in 'POST /pet/{petId}/uploadImage'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275059)"
+            "markdown": "Authentication Bypass in 'GET /pet/findByTags'.\n\n# Sample Request\n\n```http\nGET /pet/findByTags?tags=%22%21Y%29t%26GQW HTTP/1.1\napi_key: spec};ial-key\nx-mapi-program-uuid: 35b2e145-6806-4926-a198-ec5093c15303\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Sat, 29 Jan 2022 04:36:04 GMT\n\n<List/>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/10149/405039)\n",
+            "text": "Authentication Bypass in 'GET /pet/findByTags'. [Details](https://mayhem4api.forallsecure.com/issues/10149/405039)"
           },
-          "ruleId": "invalid-response-spec (unspecified status code: 400)"
+          "ruleId": "auth-bypass"
         },
         {
           "codeFlows": [],
@@ -250,10 +142,10 @@
             }
           ],
           "message": {
-            "markdown": "Internal Server Error in 'POST /user/createWithArray'.\n\n# Sample Request\n\n```http\nPOST /v3/user/createWithArray HTTP/1.1\ncontent-type: application/json\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: af89cda9-c161-4314-b630-d835c9470c18\n\n[{\"email\":\"email\",\"firstName\":\"firstName\",\"id\":0,\"lastName\":\"lastName\",\"password\":\"password\",\"phone\":\"phone\",\"userStatus\":6,\"username\":\"username\"},{\"email\":\"email\",\"firstName\":\"firstName\",\"id\":0,\"lastName\":\"lastName\",\"password\":\"password\",\"phone\":\"phone\",\"userStatus\":6,\"username\":\"username\"},{\"email\":\"email\",\"firstName\":\"firstName\",\"id\":0,\"lastName\":\"lastName\",\"password\":\"password\",\"phone\":\"phone\",\"userStatus\":6,\"username\":\"username\"},{\"email\":\"email\",\"firstName\":\"firstName\",\"id\":0,\"lastName\":\"lastName\",\"password\":\"password\",\"phone\":\"phone\",\"userStatus\":6,\"username\":\"username\"},{\"email\":\"email\",\"firstName\":\"firstName\",\"id\":0,\"lastName\":\"lastName\",\"password\":\"password\",\"phone\":\"phone\",\"userStatus\":6,\"username\":\"username\"},{\"email\":\"email\",\"firstName\":\"firstName\",\"id\":0,\"lastName\":\"lastName\",\"password\":\"password\",\"phone\":\"phone\",\"userStatus\":6,\"username\":\"username\"},{\"email\":\"numfJ}5ZMr:lm{qvBBQDSh@nlZ\",\"lastName\":null},{\"phone\":\"᭗３𑃹\\n꩕໘꧘ ᱒۶𑛀𑋵\"}]\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 500 Internal Server Error\ncontent-type: application/json;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:18:55 GMT\nconnection: close\n\n{\n  \"error\": \"Internal Server Error\",\n  \"message\": \"entity ID cannot be null\",\n  \"path\": \"/v3/user/createWithArray\",\n  \"status\": 500,\n  \"timestamp\": \"2021-11-17T22:18:56.495Z\"\n}\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275060)\n",
-            "text": "Internal Server Error in 'POST /user/createWithArray'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275060)"
+            "markdown": "Authentication Bypass in 'DELETE /pet/{petId}'.\n\n# Sample Request\n\n```http\nDELETE /pet/3 HTTP/1.1\napi_key: UO'o'aK#@Zl-d6B\napi_key: spePial-key\nauthorization: BearevC\"G<RY*'@Z#3mkg 87fc1655-e7f0-4369-8777-c858898cdb66\nx-mapi-program-uuid: dba79410-a920-4750-b1a8-131becd25721\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\ncontent-length: 0\ndate: Wed, 26 Jan 2022 19:54:51 GMT\n\nEmpty response\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/10149/405040)\n",
+            "text": "Authentication Bypass in 'DELETE /pet/{petId}'. [Details](https://mayhem4api.forallsecure.com/issues/10149/405040)"
           },
-          "ruleId": "internal-server-error"
+          "ruleId": "auth-bypass"
         },
         {
           "codeFlows": [],
@@ -268,8 +160,80 @@
             }
           ],
           "message": {
-            "markdown": "Invalid Response Spec (unable to parse body as xml) in 'GET /store/order/{orderId}'.\n\n# Sample Request\n\n```http\nGET /v3/store/order/2 HTTP/1.1\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 0d18ac2f-9974-44a0-90fb-69190b2069ba\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:18:55 GMT\n\n<Order><id>2</id><petId>1</petId><quantity>2</quantity><shipDate>2021-11-17T21:45:19.806Z</shipDate><status>delivered</status><complete>false</complete></Order>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275061)\n",
-            "text": "Invalid Response Spec in 'GET /store/order/{orderId}'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275061)"
+            "markdown": "Invalid Response Spec (unspecified status code: 401) in 'POST /pet'.\n\n# Sample Request\n\n```http\nPOST /pet HTTP/1.1\ncontent-type: application/json\napi_key: <REDACTED>\nx-mapi-program-uuid: 248bf7ba-0c96-4b6d-9ea2-398062e6414c\n\n{\"category\":{\"id\":6,\"name\":\"name\"},\"id\":0,\"name\":\"doggie\",\"photoUrls\":[\"photoUrls\",\"photoUrls\"],\"status\":\"available\",\"tags\":[{\"id\":1,\"name\":\"name\"},{\"id\":1,\"name\":\"name\"}]}\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 401 Unauthorized\ncache-control: no-store\npragma: no-cache\nwww-authenticate: Bearer realm=\"oauth2-resource\", error=\"unauthorized\", error_description=\"Full authentication is required to access this resource\"\nx-content-type-options: nosniff\nx-xss-protection: 1; mode=block\nx-frame-options: DENY\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Sat, 29 Jan 2022 04:34:24 GMT\n\n<UnauthorizedException><error>unauthorized</error><error_description>Full authentication is required to access this resource</error_description></UnauthorizedException>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/10149/405041)\n",
+            "text": "Invalid Response Spec in 'POST /pet'. [Details](https://mayhem4api.forallsecure.com/issues/10149/405041)"
+          },
+          "ruleId": "invalid-response-spec (unspecified status code: 401)"
+        },
+        {
+          "codeFlows": [],
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "unknown-file",
+                  "uriBaseId": "%SRCROOT%"
+                }
+              }
+            }
+          ],
+          "message": {
+            "markdown": "Invalid Response Spec (unspecified status code: 401) in 'PUT /pet'.\n\n# Sample Request\n\n```http\nPUT /pet HTTP/1.1\ncontent-type: application/json\napi_key: <REDACTED>\nx-mapi-program-uuid: 592b15a7-c587-4c62-bc74-442f0e08d60d\n\n{\"category\":{\"id\":6,\"name\":\"name\"},\"id\":0,\"name\":\"doggie\",\"photoUrls\":[\"photoUrls\",\"photoUrls\"],\"status\":\"available\",\"tags\":[{\"id\":1,\"name\":\"name\"},{\"id\":1,\"name\":\"name\"}]}\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 401 Unauthorized\ncache-control: no-store\npragma: no-cache\nwww-authenticate: Bearer realm=\"oauth2-resource\", error=\"unauthorized\", error_description=\"Full authentication is required to access this resource\"\nx-content-type-options: nosniff\nx-xss-protection: 1; mode=block\nx-frame-options: DENY\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Sat, 29 Jan 2022 04:34:25 GMT\n\n<UnauthorizedException><error>unauthorized</error><error_description>Full authentication is required to access this resource</error_description></UnauthorizedException>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/10149/405042)\n",
+            "text": "Invalid Response Spec in 'PUT /pet'. [Details](https://mayhem4api.forallsecure.com/issues/10149/405042)"
+          },
+          "ruleId": "invalid-response-spec (unspecified status code: 401)"
+        },
+        {
+          "codeFlows": [],
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "unknown-file",
+                  "uriBaseId": "%SRCROOT%"
+                }
+              }
+            }
+          ],
+          "message": {
+            "markdown": "Invalid Response Spec (unspecified status code: 401) in 'GET /pet/findByStatus'.\n\n# Sample Request\n\n```http\nGET /pet/findByStatus?status=http%3A%2F%2Fmake-1.2.3.4-rebind-127.0-0.1-rr.1u.ms%3A34959%2Cpending%2Chttp%3A%2F%2Fmake-0.0.0.0-and-1.1.1.2-rr.1u.ms%3A34959%2Cpending%2Csold%2Chttp%3A%2F%2F127.1.1.1%3A34959%23%5C%40127.2.2.2%3A80%2F%2Cpending HTTP/1.1\napi_key: <REDACTED>\nx-mapi-program-uuid: cf0487e5-4ac5-432f-a0fc-98169826bbff\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 401 Unauthorized\ncache-control: no-store\npragma: no-cache\nwww-authenticate: Bearer realm=\"oauth2-resource\", error=\"unauthorized\", error_description=\"Full authentication is required to access this resource\"\nx-content-type-options: nosniff\nx-xss-protection: 1; mode=block\nx-frame-options: DENY\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Sat, 29 Jan 2022 04:34:24 GMT\n\n<UnauthorizedException><error>unauthorized</error><error_description>Full authentication is required to access this resource</error_description></UnauthorizedException>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/10149/405043)\n",
+            "text": "Invalid Response Spec in 'GET /pet/findByStatus'. [Details](https://mayhem4api.forallsecure.com/issues/10149/405043)"
+          },
+          "ruleId": "invalid-response-spec (unspecified status code: 401)"
+        },
+        {
+          "codeFlows": [],
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "unknown-file",
+                  "uriBaseId": "%SRCROOT%"
+                }
+              }
+            }
+          ],
+          "message": {
+            "markdown": "Invalid Response Spec (got a non-empty response when an empty response was specified) in 'GET /pet/findByTags'.\n\n# Sample Request\n\n```http\nGET /pet/findByTags HTTP/1.1\nauthorization: <REDACTED>\napi_key: <REDACTED>\nx-mapi-program-uuid: d6e3634e-d8b6-4877-8af1-4cf5e57330df\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 400 Bad Request\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 26 Jan 2022 19:54:51 GMT\nconnection: close\n\n<Map><timestamp>2022-01-26T19:54:51.837Z</timestamp><status>400</status><error>Bad Request</error><message>Required List parameter 'tags' is not present</message><path>/v3/pet/findByTags</path></Map>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/10149/405044)\n",
+            "text": "Invalid Response Spec in 'GET /pet/findByTags'. [Details](https://mayhem4api.forallsecure.com/issues/10149/405044)"
+          },
+          "ruleId": "invalid-response-spec (got a non-empty response when an empty response was specified)"
+        },
+        {
+          "codeFlows": [],
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "unknown-file",
+                  "uriBaseId": "%SRCROOT%"
+                }
+              }
+            }
+          ],
+          "message": {
+            "markdown": "Invalid Response Spec (unable to parse body as xml) in 'GET /pet/findByTags'.\n\n# Sample Request\n\n```http\nGET /pet/findByTags?tags=str%2C%21l%2Cstr%2Cstr%2C%252e%252e%5C%252e%252e%5C%252e%252e%5C%252e%252e%5C%252e%252e%5C%252e%252e%5C%252e%252e%5C%252e%252e%5C%252e%252e%5Cetc%2Fpasswd%2Cstr%2Cstr%2Chttps%3A%2F%2Fssrf.localdomain.pw%2Fjson-with-body%2F301-http-127.0.0.1%3A34959-.j.json%2Cstr%2C%25252e%25252e%5C%25252e%25252e%5C%25252e%25252e%5C%25252e%25252e%5C%25252e%25252e%5Cetc%2Fpasswd HTTP/1.1\napi_key: <REDACTED>\nx-mapi-program-uuid: 9d413037-5813-456e-badb-45d53a1bc323\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Sat, 29 Jan 2022 04:34:24 GMT\n\n<List/>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/10149/405045)\n",
+            "text": "Invalid Response Spec in 'GET /pet/findByTags'. [Details](https://mayhem4api.forallsecure.com/issues/10149/405045)"
           },
           "ruleId": "invalid-response-spec (unable to parse body as xml)"
         },
@@ -286,8 +250,8 @@
             }
           ],
           "message": {
-            "markdown": "Invalid Response Spec (unspecified status code: 401) in 'GET /pet/{petId}'.\n\n# Sample Request\n\n```http\nGET /v3/pet/65537 HTTP/1.1\napi_key: speci~o@*1@2Rtw7C<$0%B6>Tk<0mO8~p=U=-!\nauthorization: Bern}dSHRCW8Hi6J;L\\JnmIcsDlwAPTqtYW7N2X'BbY%rvbm%bwd86<6%a7o^G_> 314f1a62-0239-445f-9be4-7249618fdd62\nx-mapi-program-uuid: a938827e-1a4f-4cae-b1e3-e2b2e12b8388\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 401 Unauthorized\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:18:55 GMT\n\n<Map><timestamp>2021-11-17T22:18:56.667Z</timestamp><status>401</status><error>Unauthorized</error><message>Missing API key!</message><path>/v3/pet/65537</path></Map>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275062)\n",
-            "text": "Invalid Response Spec in 'GET /pet/{petId}'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275062)"
+            "markdown": "Invalid Response Spec (unspecified status code: 401) in 'GET /pet/{petId}'.\n\n# Sample Request\n\n```http\nGET /pet/-3894 HTTP/1.1\napi_key: sn!-=1$Jx7SvZ%:&a^aVtHz$DmJS#)=]qJ3lM[\\>96UZws\nx-mapi-program-uuid: a58f91c5-fbc4-41a4-92f8-ea86eeefe173\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 401 Unauthorized\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Sat, 29 Jan 2022 04:34:32 GMT\n\n<Map><timestamp>2022-01-29T04:34:32.521Z</timestamp><status>401</status><error>Unauthorized</error><message>Missing API key!</message><path>/v3/pet/-3894</path></Map>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/10149/405046)\n",
+            "text": "Invalid Response Spec in 'GET /pet/{petId}'. [Details](https://mayhem4api.forallsecure.com/issues/10149/405046)"
           },
           "ruleId": "invalid-response-spec (unspecified status code: 401)"
         },
@@ -304,206 +268,8 @@
             }
           ],
           "message": {
-            "markdown": "Invalid Response Spec (unspecified status code: 200) in 'PUT /user/{username}'.\n\n# Sample Request\n\n```http\nPUT /v3/user/%F0%B0%83%A2%F3%A6%A4%9E%F2%A8%82%85%F0%BE%BB%96%F1%8C%BA%93%F3%B2%8F%8B%F3%A0%98%AB HTTP/1.1\ncontent-type: application/json\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 01cf421b-fc5d-41af-90e5-064f212c0f3d\n\n{\"email\":\"email\",\"firstName\":\"firstName\",\"id\":0,\"lastName\":\"lastName\",\"password\":\"password\",\"phone\":\"phone\",\"userStatus\":6,\"username\":\"username\"}\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\ncontent-length: 0\ndate: Wed, 17 Nov 2021 22:18:55 GMT\n\nEmpty response\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275063)\n",
-            "text": "Invalid Response Spec in 'PUT /user/{username}'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275063)"
-          },
-          "ruleId": "invalid-response-spec (unspecified status code: 200)"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Invalid Response Spec (got a non-empty response when an empty response was specified) in 'GET /pet/findByStatus'.\n\n# Sample Request\n\n```http\nGET /v3/pet/findByStatus?status=str%2Cavailable%2CsV%2B%3D%26%3CDz8%7B%5B%22%2Cpending%2Cstr%2Csold%2Csold%2Cstr HTTP/1.1\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: d0c834ab-546a-46c7-9e41-1f4bb006add6\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 400 Bad Request\nx-content-type-options: nosniff\nx-xss-protection: 1; mode=block\ncache-control: no-cache, no-store, max-age=0, must-revalidate\npragma: no-cache\nexpires: 0\nx-frame-options: DENY\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:18:56 GMT\nconnection: close\n\n<Map><timestamp>2021-11-17T22:18:56.733Z</timestamp><status>400</status><error>Bad Request</error><message>Invalid status: str</message><path>/v3/pet/findByStatus</path></Map>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275064)\n",
-            "text": "Invalid Response Spec in 'GET /pet/findByStatus'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275064)"
-          },
-          "ruleId": "invalid-response-spec (got a non-empty response when an empty response was specified)"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Invalid Response Spec (got a non-empty response when an empty response was specified) in 'GET /pet/findByTags'.\n\n# Sample Request\n\n```http\nGET /v3/pet/findByTags HTTP/1.1\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: d8f97969-47ea-4c1a-9c7c-ff6de8ad2a63\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 400 Bad Request\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:18:56 GMT\nconnection: close\n\n<Map><timestamp>2021-11-17T22:18:56.787Z</timestamp><status>400</status><error>Bad Request</error><message>Required List parameter 'tags' is not present</message><path>/v3/pet/findByTags</path></Map>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275065)\n",
-            "text": "Invalid Response Spec in 'GET /pet/findByTags'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275065)"
-          },
-          "ruleId": "invalid-response-spec (got a non-empty response when an empty response was specified)"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Authentication Bypass in 'DELETE /pet/{petId}'.\n\n# Sample Request\n\n```http\nDELETE /v3/pet/19414 HTTP/1.1\napi_key: spe]XCPf\"*&\nauthorization: Bearer 314f1a62-~[SBHV!f24`|9618fdd62\nx-mapi-program-uuid: f2fd37f0-d440-4550-b5cd-8dffff4eb4c6\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\ncontent-length: 0\ndate: Wed, 17 Nov 2021 22:18:56 GMT\n\nEmpty response\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275066)\n",
-            "text": "Authentication Bypass in 'DELETE /pet/{petId}'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275066)"
-          },
-          "ruleId": "auth-bypass"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Invalid Response Spec (unspecified status code: 400) in 'POST /pet'.\n\n# Sample Request\n\n```http\nPOST /v3/pet HTTP/1.1\ncontent-type: application/json\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 55b2e132-875d-415b-999a-35446f88bcf1\n\n\"%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\etc/passwd\"\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 400 Bad Request\nx-content-type-options: nosniff\nx-xss-protection: 1; mode=block\ncache-control: no-cache, no-store, max-age=0, must-revalidate\npragma: no-cache\nexpires: 0\nx-frame-options: DENY\ncontent-type: application/json;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:18:56 GMT\nconnection: close\n\n{\n  \"error\": \"Bad Request\",\n  \"message\": \"JSON parse error: Cannot construct instance of `org.openapitools.model.Pet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\etc/passwd'); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `org.openapitools.model.Pet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\etc/passwd')\\n at [Source: (PushbackInputStream); line: 1, column: 1]\",\n  \"path\": \"/v3/pet\",\n  \"status\": 400,\n  \"timestamp\": \"2021-11-17T22:18:56.872Z\"\n}\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275067)\n",
-            "text": "Invalid Response Spec in 'POST /pet'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275067)"
-          },
-          "ruleId": "invalid-response-spec (unspecified status code: 400)"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Internal Server Error in 'POST /store/order'.\n\n# Sample Request\n\n```http\nPOST /v3/store/order HTTP/1.1\ncontent-type: application/json\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 8cfe79d7-86a8-4fb1-975b-98b82f7de413\n\n{\"complete\":false}\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 500 Internal Server Error\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:18:56 GMT\nconnection: close\n\n<Map><timestamp>2021-11-17T22:18:56.902Z</timestamp><status>500</status><error>Internal Server Error</error><message>entity ID cannot be null</message><path>/v3/store/order</path></Map>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275068)\n",
-            "text": "Internal Server Error in 'POST /store/order'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275068)"
-          },
-          "ruleId": "internal-server-error"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Internal Server Error in 'POST /user'.\n\n# Sample Request\n\n```http\nPOST /v3/user HTTP/1.1\ncontent-type: application/json\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: e4e003a1-0ddc-4443-8b4a-95d4fb0cf748\n\n{\"password\":\"str\",\"phone\":\"+𝟝꣙ (𝟜꘠𞋲)\\u000b꘦੧٩ ०𑥖𐒤𝟕\"}\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 500 Internal Server Error\ncontent-type: application/json;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:18:56 GMT\nconnection: close\n\n{\n  \"error\": \"Internal Server Error\",\n  \"message\": \"entity ID cannot be null\",\n  \"path\": \"/v3/user\",\n  \"status\": 500,\n  \"timestamp\": \"2021-11-17T22:18:56.929Z\"\n}\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275069)\n",
-            "text": "Internal Server Error in 'POST /user'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275069)"
-          },
-          "ruleId": "internal-server-error"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Invalid Response Spec (unspecified status code: 200) in 'POST /pet/{petId}'.\n\n# Sample Request\n\n```http\nPOST /v3/pet/31 HTTP/1.1\ncontent-type: application/x-www-form-urlencoded\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 8aecc953-7ea3-4dac-9b82-d76555755ad2\n\nstatus=str\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\nx-content-type-options: nosniff\nx-xss-protection: 1; mode=block\ncache-control: no-cache, no-store, max-age=0, must-revalidate\npragma: no-cache\nexpires: 0\nx-frame-options: DENY\ncontent-length: 0\ndate: Wed, 17 Nov 2021 22:18:56 GMT\n\nEmpty response\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275070)\n",
-            "text": "Invalid Response Spec in 'POST /pet/{petId}'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275070)"
-          },
-          "ruleId": "invalid-response-spec (unspecified status code: 200)"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Invalid Response Spec (unspecified status code: 200) in 'DELETE /user/{username}'.\n\n# Sample Request\n\n```http\nDELETE /v3/user/str HTTP/1.1\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 6d920d58-3ac8-48f3-8679-082739537cdd\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\ncontent-length: 0\ndate: Wed, 17 Nov 2021 22:18:56 GMT\n\nEmpty response\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275071)\n",
-            "text": "Invalid Response Spec in 'DELETE /user/{username}'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275071)"
-          },
-          "ruleId": "invalid-response-spec (unspecified status code: 200)"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Invalid Response Spec (got a non-empty response when an empty response was specified) in 'POST /user/createWithList'.\n\n# Sample Request\n\n```http\nPOST /v3/user/createWithList HTTP/1.1\ncontent-type: application/json\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: e7737e96-8040-4704-93cf-a7127b5c0d69\n\n[{\"password\":\"http://make-1.1.1.2-and-0.0.0.0-rr.1u.ms:39877\"},{\"email\":\"email\",\"firstName\":\"firstName\",\"id\":0,\"lastName\":\"lastName\",\"password\":\"password\",\"phone\":\"phone\",\"userStatus\":6,\"username\":\"username\"},{\"email\":\"i1EgRvl@GKIyUrm.HPG\",\"id\":2,\"userStatus\":4294967296,\"username\":\"+)KD{v&\\\\Uh-l_rm6%K\"},{\"email\":\"email\",\"firstName\":\"firstName\",\"id\":0,\"lastName\":\"lastName\",\"password\":\"password\",\"phone\":\"phone\",\"userStatus\":6,\"username\":\"username\"},{},{\"email\":\"email\",\"firstName\":\"firstName\",\"id\":0,\"lastName\":\"lastName\",\"password\":\"password\",\"phone\":\"phone\",\"userStatus\":6,\"username\":\"username\"},{\"email\":\"email\",\"firstName\":\"firstName\",\"id\":0,\"lastName\":\"lastName\",\"password\":\"password\",\"phone\":\"phone\",\"userStatus\":6,\"username\":\"username\"},{\"email\":\"email\",\"firstName\":\"firstName\",\"id\":0,\"lastName\":\"lastName\",\"password\":\"password\",\"phone\":\"phone\",\"userStatus\":6,\"username\":\"username\"},{\"email\":\"email\",\"firstName\":\"firstName\",\"id\":0,\"lastName\":\"lastName\",\"password\":\"password\",\"phone\":\"phone\",\"userStatus\":6,\"username\":\"username\"}]\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 400 Bad Request\ncontent-type: application/json;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:18:56 GMT\nconnection: close\n\n{\n  \"error\": \"Bad Request\",\n  \"message\": \"JSON parse error: Numeric value (4294967296) out of range of int\\n at [Source: (PushbackInputStream); line: 1, column: 271]; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Numeric value (4294967296) out of range of int\\n at [Source: (PushbackInputStream); line: 1, column: 271]\\n at [Source: (PushbackInputStream); line: 1, column: 261] (through reference chain: java.util.ArrayList[2]->org.openapitools.model.User[\\\"userStatus\\\"])\",\n  \"path\": \"/v3/user/createWithList\",\n  \"status\": 400,\n  \"timestamp\": \"2021-11-17T22:18:57.438Z\"\n}\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275072)\n",
-            "text": "Invalid Response Spec in 'POST /user/createWithList'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275072)"
-          },
-          "ruleId": "invalid-response-spec (got a non-empty response when an empty response was specified)"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Invalid Response Spec (got a non-empty response when an empty response was specified) in 'POST /store/order'.\n\n# Sample Request\n\n```http\nPOST /v3/store/order HTTP/1.1\ncontent-type: application/json\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 033c86c8-4c1c-493a-ab8d-121568311cfd\n\n\"%25%32%65%25%32%65\\\\\\\\%25%32%65%25%32%65\\\\\\\\%25%32%65%25%32%65\\\\\\\\%25%32%65%25%32%65\\\\\\\\%25%32%65%25%32%65\\\\\\\\%25%32%65%25%32%65\\\\\\\\%25%32%65%25%32%65\\\\\\\\%25%32%65%25%32%65\\\\\\\\%25%32%65%25%32%65\\\\\\\\%25%32%65%25%32%65\\\\\\\\etc/passwd\"\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 400 Bad Request\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:18:56 GMT\nconnection: close\n\n<Map><timestamp>2021-11-17T22:18:57.542Z</timestamp><status>400</status><error>Bad Request</error><message>JSON parse error: Cannot construct instance of `org.openapitools.model.Order` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('%25%32%65%25%32%65\\\\%25%32%65%25%32%65\\\\%25%32%65%25%32%65\\\\%25%32%65%25%32%65\\\\%25%32%65%25%32%65\\\\%25%32%65%25%32%65\\\\%25%32%65%25%32%65\\\\%25%32%65%25%32%65\\\\%25%32%65%25%32%65\\\\%25%32%65%25%32%65\\\\etc/passwd'); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `org.openapitools.model.Order` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('%25%32%65%25%32%65\\\\%25%32%65%25%32%65\\\\%25%32%65%25%32%65\\\\%25%32%65%25%32%65\\\\%25%32%65%25%32%65\\\\%25%32%65%25%32%65\\\\%25%32%65%25%32%65\\\\%25%32%65%25%32%65\\\\%25%32%65%25%32%65\\\\%25%32%65%25%32%65\\\\etc/passwd')\n at [Source: (PushbackInputStream); line: 1, column: 1]</message><path>/v3/store/order</path></Map>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275073)\n",
-            "text": "Invalid Response Spec in 'POST /store/order'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275073)"
-          },
-          "ruleId": "invalid-response-spec (got a non-empty response when an empty response was specified)"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Invalid Response Spec (unable to parse body as xml) in 'GET /user/{username}'.\n\n# Sample Request\n\n```http\nGET /v3/user/str HTTP/1.1\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 2c6c8257-6645-4061-8974-8e98654849a9\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:18:56 GMT\n\n<User><id/><username>str</username><firstName/><lastName/><email/><password/><phone/><userStatus/></User>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275074)\n",
-            "text": "Invalid Response Spec in 'GET /user/{username}'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275074)"
+            "markdown": "Invalid Response Spec (unable to parse body as xml) in 'GET /pet/{petId}'.\n\n# Sample Request\n\n```http\nGET /pet/7 HTTP/1.1\napi_key: <REDACTED>\nx-mapi-program-uuid: 7d76927a-c0bb-445d-b20d-7188f1ccbf10\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Sat, 29 Jan 2022 04:34:25 GMT\n\n<Pet><id>7</id><category><id>4</id><name>Lions</name></category><name>Lion 1</name><photoUrl><photoUrl>url1</photoUrl><photoUrl>url2</photoUrl></photoUrl><tag><tag><id>1</id><name>tag1</name></tag><tag><id>2</id><name>tag2</name></tag></tag><status>available</status></Pet>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/10149/405047)\n",
+            "text": "Invalid Response Spec in 'GET /pet/{petId}'. [Details](https://mayhem4api.forallsecure.com/issues/10149/405047)"
           },
           "ruleId": "invalid-response-spec (unable to parse body as xml)"
         },
@@ -520,10 +286,10 @@
             }
           ],
           "message": {
-            "markdown": "Internal Server Error in 'DELETE /user/{username}'.\n\n# Sample Request\n\n```http\nDELETE /v3/user/X;cU%x(GYe_0Ci9ZxCY HTTP/1.1\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 61d94cf2-51db-47d4-9a41-0edf6e882876\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 500 Internal Server Error\ncontent-type: application/json;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:18:58 GMT\nconnection: close\n\n{\n  \"error\": \"Internal Server Error\",\n  \"message\": \"The request was rejected because the URL contained a potentially malicious String \\\";\\\"\",\n  \"path\": \"/v3/user/X;cU%x(GYe_0Ci9ZxCY\",\n  \"status\": 500,\n  \"timestamp\": \"2021-11-17T22:18:58.899Z\"\n}\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275075)\n",
-            "text": "Internal Server Error in 'DELETE /user/{username}'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275075)"
+            "markdown": "Invalid Response Spec (unspecified status code: 401) in 'POST /pet/{petId}'.\n\n# Sample Request\n\n```http\nPOST /pet/233 HTTP/1.1\ncontent-type: application/x-www-form-urlencoded\napi_key: <REDACTED>\nx-mapi-program-uuid: 126862c2-666c-465a-9e23-382f149631b5\n\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 401 Unauthorized\ncache-control: no-store\npragma: no-cache\nwww-authenticate: Bearer realm=\"oauth2-resource\", error=\"unauthorized\", error_description=\"Full authentication is required to access this resource\"\nx-content-type-options: nosniff\nx-xss-protection: 1; mode=block\nx-frame-options: DENY\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Sat, 29 Jan 2022 04:34:25 GMT\n\n<UnauthorizedException><error>unauthorized</error><error_description>Full authentication is required to access this resource</error_description></UnauthorizedException>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/10149/405048)\n",
+            "text": "Invalid Response Spec in 'POST /pet/{petId}'. [Details](https://mayhem4api.forallsecure.com/issues/10149/405048)"
           },
-          "ruleId": "internal-server-error"
+          "ruleId": "invalid-response-spec (unspecified status code: 401)"
         },
         {
           "codeFlows": [],
@@ -538,10 +304,10 @@
             }
           ],
           "message": {
-            "markdown": "Internal Server Error in 'DELETE /pet/{petId}'.\n\n# Sample Request\n\n```http\nDELETE /v3//pet/0 HTTP/1.1\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 3a8eec51-7777-42a0-9a01-7a9e9d1e14ca\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 500 Internal Server Error\ncontent-type: application/json;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:18:58 GMT\nconnection: close\n\n{\n  \"error\": \"Internal Server Error\",\n  \"message\": \"The request was rejected because the URL was not normalized.\",\n  \"path\": \"/v3//pet/0\",\n  \"status\": 500,\n  \"timestamp\": \"2021-11-17T22:18:59.142Z\"\n}\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275076)\n",
-            "text": "Internal Server Error in 'DELETE /pet/{petId}'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275076)"
+            "markdown": "Invalid Response Spec (unspecified status code: 401) in 'POST /pet/{petId}/uploadImage'.\n\n# Sample Request\n\n```http\nPOST /pet/-9/uploadImage HTTP/1.1\ncontent-type: multipart/form-data; boundary=6b5df56f7c747f5b-5eb6271e049d9391-b1624e11bf855523-e18c8a750332c4cb\napi_key: <REDACTED>\nx-mapi-program-uuid: f9a575fc-7348-4dd1-9f01-0b75f5d175d0\n\n--6b5df56f7c747f5b-5eb6271e049d9391-b1624e11bf855523-e18c8a750332c4cb\r\nContent-Disposition: form-data; name=\"additionalMetadata\"\r\n\r\n\"<rz82+\"\r\n--6b5df56f7c747f5b-5eb6271e049d9391-b1624e11bf855523-e18c8a750332c4cb\r\nContent-Disposition: form-data; name=\"file\"; filename=\"file.txt\"\r\nContent-Type: application/octet-stream\r\n\r\nnull\r\n--6b5df56f7c747f5b-5eb6271e049d9391-b1624e11bf855523-e18c8a750332c4cb--\r\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 401 Unauthorized\ncache-control: no-store\npragma: no-cache\nwww-authenticate: Bearer realm=\"oauth2-resource\", error=\"unauthorized\", error_description=\"Full authentication is required to access this resource\"\nx-content-type-options: nosniff\nx-xss-protection: 1; mode=block\nx-frame-options: DENY\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Sat, 29 Jan 2022 04:34:25 GMT\n\n<UnauthorizedException><error>unauthorized</error><error_description>Full authentication is required to access this resource</error_description></UnauthorizedException>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/10149/405049)\n",
+            "text": "Invalid Response Spec in 'POST /pet/{petId}/uploadImage'. [Details](https://mayhem4api.forallsecure.com/issues/10149/405049)"
           },
-          "ruleId": "internal-server-error"
+          "ruleId": "invalid-response-spec (unspecified status code: 401)"
         },
         {
           "codeFlows": [],
@@ -556,10 +322,10 @@
             }
           ],
           "message": {
-            "markdown": "Internal Server Error in 'GET /user/{username}'.\n\n# Sample Request\n\n```http\nGET /v3/user/ZJgfCAi(Yy;Y1J_DIP HTTP/1.1\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 0a4b4932-3e8d-4422-a024-a0551cc5a5af\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 500 Internal Server Error\ncontent-type: application/json;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:18:59 GMT\nconnection: close\n\n{\n  \"error\": \"Internal Server Error\",\n  \"message\": \"The request was rejected because the URL contained a potentially malicious String \\\";\\\"\",\n  \"path\": \"/v3/user/ZJgfCAi(Yy;Y1J_DIP\",\n  \"status\": 500,\n  \"timestamp\": \"2021-11-17T22:19:00.034Z\"\n}\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275077)\n",
-            "text": "Internal Server Error in 'GET /user/{username}'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275077)"
+            "markdown": "Invalid Response Spec (unspecified status code: 401) in 'GET /store/inventory'.\n\n# Sample Request\n\n```http\nGET /store/inventory HTTP/1.1\napi_key: <REDACTED>4Vo\nx-mapi-program-uuid: db014510-acf6-4750-b093-1eb1816efa14\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 401 Unauthorized\ncontent-type: application/json;charset=UTF-8\ntransfer-encoding: chunked\ndate: Sat, 29 Jan 2022 04:34:25 GMT\n\n{\n  \"error\": \"Unauthorized\",\n  \"message\": \"Missing API key!\",\n  \"path\": \"/v3/store/inventory\",\n  \"status\": 401,\n  \"timestamp\": \"2022-01-29T04:34:25.872Z\"\n}\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/10149/405050)\n",
+            "text": "Invalid Response Spec in 'GET /store/inventory'. [Details](https://mayhem4api.forallsecure.com/issues/10149/405050)"
           },
-          "ruleId": "internal-server-error"
+          "ruleId": "invalid-response-spec (unspecified status code: 401)"
         },
         {
           "codeFlows": [],
@@ -574,334 +340,28 @@
             }
           ],
           "message": {
-            "markdown": "Invalid Response Spec (got a non-empty response when an empty response was specified) in 'GET /user/login'.\n\n# Sample Request\n\n```http\nGET /v3/user/login?username=v%24S9q%3C%22SS%7EfYpLLw%7Eof HTTP/1.1\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: a91df4ba-bf26-4144-9aa3-50d39b8a15cf\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 400 Bad Request\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:18:59 GMT\nconnection: close\n\n<Map><timestamp>2021-11-17T22:19:00.170Z</timestamp><status>400</status><error>Bad Request</error><message>Required String parameter 'password' is not present</message><path>/v3/user/login</path></Map>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275078)\n",
-            "text": "Invalid Response Spec in 'GET /user/login'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275078)"
+            "markdown": "Invalid Response Spec (unable to parse body as xml) in 'POST /store/order'.\n\n# Sample Request\n\n```http\nPOST /store/order HTTP/1.1\ncontent-type: application/json\napi_key: <REDACTED>\nx-mapi-program-uuid: adb720be-efe8-495d-96ff-29bcc303f7db\n\n{\"complete\":false,\"id\":0,\"petId\":6,\"quantity\":1,\"shipDate\":\"2000-01-23T04:56:07.000+00:00\",\"status\":\"placed\"}\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Sat, 29 Jan 2022 04:34:25 GMT\n\n<Order><id>0</id><petId>6</petId><quantity>1</quantity><shipDate>2000-01-23T04:56:07Z</shipDate><status>placed</status><complete>false</complete></Order>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/10149/405051)\n",
+            "text": "Invalid Response Spec in 'POST /store/order'. [Details](https://mayhem4api.forallsecure.com/issues/10149/405051)"
+          },
+          "ruleId": "invalid-response-spec (unable to parse body as xml)"
+        },
+        {
+          "codeFlows": [],
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "unknown-file",
+                  "uriBaseId": "%SRCROOT%"
+                }
+              }
+            }
+          ],
+          "message": {
+            "markdown": "Invalid Response Spec (got a non-empty response when an empty response was specified) in 'GET /user/login'.\n\n# Sample Request\n\n```http\nGET /user/login?password=..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd HTTP/1.1\napi_key: <REDACTED>\nx-mapi-program-uuid: 211fd58d-43cc-42c0-bdd1-3bab68d2969e\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 400 Bad Request\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Sat, 29 Jan 2022 04:34:27 GMT\nconnection: close\n\n<Map><timestamp>2022-01-29T04:34:27.870Z</timestamp><status>400</status><error>Bad Request</error><message>Required String parameter 'username' is not present</message><path>/v3/user/login</path></Map>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/10149/405052)\n",
+            "text": "Invalid Response Spec in 'GET /user/login'. [Details](https://mayhem4api.forallsecure.com/issues/10149/405052)"
           },
           "ruleId": "invalid-response-spec (got a non-empty response when an empty response was specified)"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Invalid Response Spec (unspecified status code: 401) in 'POST /pet/{petId}'.\n\n# Sample Request\n\n```http\nPOST /v3/pet/0 HTTP/1.1\ncontent-type: application/x-www-form-urlencoded\napi_key: <REDACTED>C:OC!t6Mr9a\nauthorization: ZxSx(&rdlBearer 314f1a62-0239-445f-9be47249618fdd62\nx-mapi-program-uuid: 31f17d90-fa69-4455-8944-71714049e440\n\nname=PT%2B%25AOmQtr\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 401 Unauthorized\ncache-control: no-store\npragma: no-cache\nwww-authenticate: Bearer realm=\"oauth2-resource\", error=\"unauthorized\", error_description=\"Full authentication is required to access this resource\"\nx-content-type-options: nosniff\nx-xss-protection: 1; mode=block\nx-frame-options: DENY\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:18:59 GMT\n\n<UnauthorizedException><error>unauthorized</error><error_description>Full authentication is required to access this resource</error_description></UnauthorizedException>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275079)\n",
-            "text": "Invalid Response Spec in 'POST /pet/{petId}'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275079)"
-          },
-          "ruleId": "invalid-response-spec (unspecified status code: 401)"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Invalid Response Spec (unspecified status code: 401) in 'GET /store/inventory'.\n\n# Sample Request\n\n```http\nGET /v3/store/inventory HTTP/1.1\napi_key: s`FMBal-key\nauthorization: Ber 314f1gaS4023618fdd62_K<W^#yEQ[!(l9*Vog^FE:p)jO|2hD>`Q\nx-mapi-program-uuid: 4992ad2e-0600-41ee-8dd7-8d63d26b51d9\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 401 Unauthorized\ncontent-type: application/json;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:19:00 GMT\n\n{\n  \"error\": \"Unauthorized\",\n  \"message\": \"Missing API key!\",\n  \"path\": \"/v3/store/inventory\",\n  \"status\": 401,\n  \"timestamp\": \"2021-11-17T22:19:01.027Z\"\n}\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275080)\n",
-            "text": "Invalid Response Spec in 'GET /store/inventory'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275080)"
-          },
-          "ruleId": "invalid-response-spec (unspecified status code: 401)"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Authentication Bypass in 'GET /pet/findByTags'.\n\n# Sample Request\n\n```http\nGET /v3/pet/findByTags?tags=6n%2Caf%24%5B0%40*Z%2C1CGsuY9N%28%3El%2C%F1%A5%96%91%F1%AC%A7%86%F2%84%87%95%F2%B6%BA%B3%F0%9C%95%AA%F2%84%B2%BC%F3%AE%91%91%2Cstr HTTP/1.1\napi_key: shecial-key\nauthorization: <REDACTED>\nx-mapi-program-uuid: 67212263-15b0-4338-8f11-ee2e4fef1997\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:19:00 GMT\n\n<List><item><id>263</id><category/><name>doggie</name><photoUrl><photoUrl>str</photoUrl><photoUrl>str</photoUrl><photoUrl>str</photoUrl></photoUrl><tag><tag><id>1</id><name>name</name></tag><tag><id>1</id><name>name</name></tag><tag><id/><name>str</name></tag><tag><id>-8</id><name/></tag><tag><id>32768</id><name/></tag><tag><id>-6</id><name/></tag><tag><id>1</id><name>name</name></tag><tag><id>1</id><name>name</name></tag></tag><status/></item></List>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275081)\n",
-            "text": "Authentication Bypass in 'GET /pet/findByTags'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275081)"
-          },
-          "ruleId": "auth-bypass"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Invalid Response Spec (got a non-empty response when an empty response was specified) in 'PUT /user/{username}'.\n\n# Sample Request\n\n```http\nPUT /v3/user/str HTTP/1.1\ncontent-type: application/json\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 02c2ebac-0778-4e31-a4e0-1c671b9f29ab\n\n\"%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\etc/passwd%00.html\"\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 400 Bad Request\ncontent-type: application/json;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:19:00 GMT\nconnection: close\n\n{\n  \"error\": \"Bad Request\",\n  \"message\": \"JSON parse error: Cannot construct instance of `org.openapitools.model.User` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\etc/passwd%00.html'); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `org.openapitools.model.User` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\%252e%252e\\\\etc/passwd%00.html')\\n at [Source: (PushbackInputStream); line: 1, column: 1]\",\n  \"path\": \"/v3/user/str\",\n  \"status\": 400,\n  \"timestamp\": \"2021-11-17T22:19:01.516Z\"\n}\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275082)\n",
-            "text": "Invalid Response Spec in 'PUT /user/{username}'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275082)"
-          },
-          "ruleId": "invalid-response-spec (got a non-empty response when an empty response was specified)"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Invalid Response Spec (unspecified status code: 401) in 'PUT /pet'.\n\n# Sample Request\n\n```http\nPUT /v3/pet HTTP/1.1\ncontent-type: application/json\napi_key: specialYM+LDV&`sFkefez5k<=X1_$Vz1$y5^H+y[ZG=mt\nauthorization: Bearer 314f1a62-0239-445f*n$g4-724961Afdd62\nx-mapi-program-uuid: 48b7dd33-8a7a-4b46-b108-b25892aa230d\n\n{\"category\":{\"id\":6,\"name\":\"name\"},\"id\":0,\"name\":\"doggie\",\"photoUrls\":[\"photoUrls\",\"photoUrls\"],\"status\":\"available\",\"tags\":[{\"id\":1,\"name\":\"name\"},{\"id\":1,\"name\":\"name\"}]}\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 401 Unauthorized\ncache-control: no-store\npragma: no-cache\nwww-authenticate: Bearer realm=\"oauth2-resource\", error=\"invalid_token\", error_description=\"Invalid access token: 314f1a62-0239-445f*n$g4-724961Afdd62\"\nx-content-type-options: nosniff\nx-xss-protection: 1; mode=block\nx-frame-options: DENY\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:19:01 GMT\n\n<InvalidTokenException><error>invalid_token</error><error_description>Invalid access token: 314f1a62-0239-445f*n$g4-724961Afdd62</error_description></InvalidTokenException>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275083)\n",
-            "text": "Invalid Response Spec in 'PUT /pet'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275083)"
-          },
-          "ruleId": "invalid-response-spec (unspecified status code: 401)"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Invalid Response Spec (unspecified status code: 401) in 'GET /pet/findByStatus'.\n\n# Sample Request\n\n```http\nGET /v3/pet/findByStatus?status=pending%2Csold%2C%3Bn HTTP/1.1\napi_key: special-\"c\\DJaI&)Zr#DJk^\"uXj5Nb[8b[WskeymdF6\nauthorization: Bearer 311a62-0239-445f-9be4-7249618fdd62\nx-mapi-program-uuid: da35d1cd-d18c-40b4-a1bd-f7b9214edde3\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 401 Unauthorized\ncache-control: no-store\npragma: no-cache\nwww-authenticate: Bearer realm=\"oauth2-resource\", error=\"invalid_token\", error_description=\"Invalid access token: 311a62-0239-445f-9be4-7249618fdd62\"\nx-content-type-options: nosniff\nx-xss-protection: 1; mode=block\nx-frame-options: DENY\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:19:02 GMT\n\n<InvalidTokenException><error>invalid_token</error><error_description>Invalid access token: 311a62-0239-445f-9be4-7249618fdd62</error_description></InvalidTokenException>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275084)\n",
-            "text": "Invalid Response Spec in 'GET /pet/findByStatus'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275084)"
-          },
-          "ruleId": "invalid-response-spec (unspecified status code: 401)"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Authentication Bypass in 'GET /pet/{petId}'.\n\n# Sample Request\n\n```http\nGET /v3/pet/0 HTTP/1.1\napi_key: <REDACTED>\nauthorization: earer 314f1a62-0239-445f-9be4-7249618fdd62\nx-mapi-program-uuid: 555515d8-1367-4d9d-bcc2-d2405cdde96d\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:19:02 GMT\n\n<Pet><id>0</id><category><id>6</id><name>name</name></category><name>doggie</name><photoUrl><photoUrl>photoUrls</photoUrl><photoUrl>photoUrls</photoUrl></photoUrl><tag><tag><id>1</id><name>name</name></tag><tag><id>1</id><name>name</name></tag></tag><status>available</status></Pet>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275085)\n",
-            "text": "Authentication Bypass in 'GET /pet/{petId}'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275085)"
-          },
-          "ruleId": "auth-bypass"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Invalid Response Spec (unspecified status code: 401) in 'POST /pet'.\n\n# Sample Request\n\n```http\nPOST /v3/pet HTTP/1.1\ncontent-type: application/json\napi_key: spehial-key\nauthorization: Be=wY:PY(M$&wt[6rl'V<adb&!^2rerWa@h1rBjdFT^^av4<X(F5 O]D315f-9be4-7249618fdd62E={<TVH|H!#_'[~_tyjNdLHLjrQSiA\\xS#\nx-mapi-program-uuid: 687e439d-50e5-4eec-828b-4fe99c9e51fb\n\n{\"category\":{\"id\":6,\"name\":\"name\"},\"id\":0,\"name\":\"doggie\",\"photoUrls\":[\"photoUrls\",\"photoUrls\"],\"status\":\"available\",\"tags\":[{\"id\":1,\"name\":\"name\"},{\"id\":1,\"name\":\"name\"}]}\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 401 Unauthorized\ncache-control: no-store\npragma: no-cache\nwww-authenticate: Bearer realm=\"oauth2-resource\", error=\"unauthorized\", error_description=\"Full authentication is required to access this resource\"\nx-content-type-options: nosniff\nx-xss-protection: 1; mode=block\nx-frame-options: DENY\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:19:02 GMT\n\n<UnauthorizedException><error>unauthorized</error><error_description>Full authentication is required to access this resource</error_description></UnauthorizedException>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275086)\n",
-            "text": "Invalid Response Spec in 'POST /pet'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275086)"
-          },
-          "ruleId": "invalid-response-spec (unspecified status code: 401)"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Internal Server Error in 'PUT /user/{username}'.\n\n# Sample Request\n\n```http\nPUT /v3/user/NuW7srY;%60=a' HTTP/1.1\ncontent-type: application/json\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 9688f26a-48bb-4ce8-b6ff-13b5ef1d0e17\n\n{\"firstName\":\"str\",\"id\":257}\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 500 Internal Server Error\ncontent-type: application/json;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:19:02 GMT\nconnection: close\n\n{\n  \"error\": \"Internal Server Error\",\n  \"message\": \"The request was rejected because the URL contained a potentially malicious String \\\";\\\"\",\n  \"path\": \"/v3/user/NuW7srY;%60=a'\",\n  \"status\": 500,\n  \"timestamp\": \"2021-11-17T22:19:03.753Z\"\n}\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275087)\n",
-            "text": "Internal Server Error in 'PUT /user/{username}'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275087)"
-          },
-          "ruleId": "internal-server-error"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Invalid Response Spec (got a non-empty response when an empty response was specified) in 'POST /user/createWithArray'.\n\n# Sample Request\n\n```http\nPOST /v3/user/createWithArray HTTP/1.1\ncontent-type: application/json\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: e0b96b44-9f9c-422f-a634-ca9ada869567\n\n[{\"userStatus\":6},{\"email\":\"email\",\"firstName\":\"firstName\",\"id\":0,\"lastName\":\"lastName\",\"password\":\"password\",\"phone\":\"phone\",\"userStatus\":6,\"username\":\"username\"},{\"email\":\"email\",\"firstName\":\"firstName\",\"id\":0,\"lastName\":\"lastName\",\"password\":\"password\",\"phone\":\"phone\",\"userStatus\":6,\"username\":\"username\"},{\"email\":\"email\",\"firstName\":\"firstName\",\"id\":0,\"lastName\":\"lastName\",\"password\":\"password\",\"phone\":\"phone\",\"userStatus\":6,\"username\":\"username\"},{},{\"firstName\":\"󻡊𜑏󘹏𔾍򶨽󻤍񿜩\",\"id\":-1,\"password\":\"pU5gXE+y%=8;\",\"phone\":\"430).658\\t9218\",\"userStatus\":4294967295},{\"email\":\"email\",\"firstName\":\"firstName\",\"id\":0,\"lastName\":\"lastName\",\"password\":\"password\",\"phone\":\"phone\",\"userStatus\":6,\"username\":\"username\"},{\"email\":\"email\",\"firstName\":\"firstName\",\"id\":0,\"lastName\":\"lastName\",\"password\":\"password\",\"phone\":\"phone\",\"userStatus\":6,\"username\":\"username\"},{\"lastName\":\"hi^#BW0hA#p&ru\"},{\"email\":\"email\",\"firstName\":\"firstName\",\"id\":0,\"lastName\":\"lastName\",\"password\":\"password\",\"phone\":\"phone\",\"userStatus\":6,\"username\":\"username\"}]\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 400 Bad Request\ncontent-type: application/json;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:19:03 GMT\nconnection: close\n\n{\n  \"error\": \"Bad Request\",\n  \"message\": \"JSON parse error: Numeric value (4294967295) out of range of int\\n at [Source: (PushbackInputStream); line: 1, column: 586]; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Numeric value (4294967295) out of range of int\\n at [Source: (PushbackInputStream); line: 1, column: 586]\\n at [Source: (PushbackInputStream); line: 1, column: 576] (through reference chain: java.util.ArrayList[5]->org.openapitools.model.User[\\\"userStatus\\\"])\",\n  \"path\": \"/v3/user/createWithArray\",\n  \"status\": 400,\n  \"timestamp\": \"2021-11-17T22:19:04.291Z\"\n}\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275088)\n",
-            "text": "Invalid Response Spec in 'POST /user/createWithArray'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275088)"
-          },
-          "ruleId": "invalid-response-spec (got a non-empty response when an empty response was specified)"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Authentication Bypass in 'PUT /pet'.\n\n# Sample Request\n\n```http\nPUT /v3/pet HTTP/1.1\ncontent-type: application/json\napi_key: speci&RV^ey\nauthorization: <REDACTED>\nx-mapi-program-uuid: 0d85668d-95aa-428f-977d-9410ca0360ae\n\n{\"category\":{\"id\":6,\"name\":\"name\"},\"id\":0,\"name\":\"doggie\",\"photoUrls\":[\"photoUrls\",\"photoUrls\"],\"status\":\"uv(~rHS{!ailableKU=:c\\\\Ar\",\"tags\":[{\"id\":1,\"name\":\"name\"},{\"id\":1,\"name\":\"name\"}]}\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\nx-content-type-options: nosniff\nx-xss-protection: 1; mode=block\ncache-control: no-cache, no-store, max-age=0, must-revalidate\npragma: no-cache\nexpires: 0\nx-frame-options: DENY\ncontent-length: 0\ndate: Wed, 17 Nov 2021 22:19:03 GMT\n\nEmpty response\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275089)\n",
-            "text": "Authentication Bypass in 'PUT /pet'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275089)"
-          },
-          "ruleId": "auth-bypass"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Internal Server Error in 'GET /pet/findByStatus'.\n\n# Sample Request\n\n```http\nGET /v3/pet//findByStatus?status=pending HTTP/1.1\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 2203024f-8ec8-46b2-a09f-a1a367e3773c\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 500 Internal Server Error\ncontent-type: application/json;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:19:05 GMT\nconnection: close\n\n{\n  \"error\": \"Internal Server Error\",\n  \"message\": \"The request was rejected because the URL was not normalized.\",\n  \"path\": \"/v3/pet//findByStatus\",\n  \"status\": 500,\n  \"timestamp\": \"2021-11-17T22:19:06.422Z\"\n}\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275090)\n",
-            "text": "Internal Server Error in 'GET /pet/findByStatus'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275090)"
-          },
-          "ruleId": "internal-server-error"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Invalid Response Spec (got a non-empty response when an empty response was specified) in 'POST /user'.\n\n# Sample Request\n\n```http\nPOST /v3/user HTTP/1.1\ncontent-type: application/json\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 2fa6a3bc-295f-4185-aa29-8eae70e2ede3\n\n\"\\\"&cat /etc/passwd\\u0000\"\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 400 Bad Request\ncontent-type: application/json;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:19:06 GMT\nconnection: close\n\n{\n  \"error\": \"Bad Request\",\n  \"message\": \"JSON parse error: Cannot construct instance of `org.openapitools.model.User` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('\\\"&cat /etc/passwd\\u0000'); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `org.openapitools.model.User` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('\\\"&cat /etc/passwd\\u0000')\\n at [Source: (PushbackInputStream); line: 1, column: 1]\",\n  \"path\": \"/v3/user\",\n  \"status\": 400,\n  \"timestamp\": \"2021-11-17T22:19:07.713Z\"\n}\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275091)\n",
-            "text": "Invalid Response Spec in 'POST /user'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275091)"
-          },
-          "ruleId": "invalid-response-spec (got a non-empty response when an empty response was specified)"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Invalid Response Spec (got a non-empty response when an empty response was specified) in 'PUT /pet'.\n\n# Sample Request\n\n```http\nPUT /v3/pet HTTP/1.1\ncontent-type: application/json\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 7b2d16dc-371b-4e51-8beb-4c13cbad2d70\n\n\"%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd%00.html\"\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 400 Bad Request\nx-content-type-options: nosniff\nx-xss-protection: 1; mode=block\ncache-control: no-cache, no-store, max-age=0, must-revalidate\npragma: no-cache\nexpires: 0\nx-frame-options: DENY\ncontent-type: application/json;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:19:10 GMT\nconnection: close\n\n{\n  \"error\": \"Bad Request\",\n  \"message\": \"JSON parse error: Cannot construct instance of `org.openapitools.model.Pet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd%00.html'); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `org.openapitools.model.Pet` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd%00.html')\\n at [Source: (PushbackInputStream); line: 1, column: 1]\",\n  \"path\": \"/v3/pet\",\n  \"status\": 400,\n  \"timestamp\": \"2021-11-17T22:19:10.843Z\"\n}\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275092)\n",
-            "text": "Invalid Response Spec in 'PUT /pet'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275092)"
-          },
-          "ruleId": "invalid-response-spec (got a non-empty response when an empty response was specified)"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Authentication Bypass in 'GET /pet/findByStatus'.\n\n# Sample Request\n\n```http\nGET /v3/pet/findByStatus?status=pending%2Csold%2Cpending%2Cpending%2Cpending HTTP/1.1\napi_key: spey\nauthorization: <REDACTED>\nx-mapi-program-uuid: bb6a44d8-5b5a-4389-98f3-64e22e1e72d6\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\nx-content-type-options: nosniff\nx-xss-protection: 1; mode=block\ncache-control: no-cache, no-store, max-age=0, must-revalidate\npragma: no-cache\nexpires: 0\nx-frame-options: DENY\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:19:10 GMT\n\n<List><item><id>4097</id><category><id>6</id><name>name</name></category><name>HH%gmoV6}yrOFf112</name><photoUrl><photoUrl>oygk%6Ftw0tM;SX^`h-</photoUrl><photoUrl>񄞶򳞙񿆌զ󜹰񻗸򳁠</photoUrl><photoUrl>str</photoUrl><photoUrl>x|RH</photoUrl><photoUrl>𙚽󻨮򙝝𮲹򝘨񊨃񊿐</photoUrl><photoUrl>16Z[jU\\@;^mwxA+IV}</photoUrl><photoUrl>cn1i7U=mL^)</photoUrl><photoUrl>񙎯򲠑󀭔󌱌𗹼򰼦󤬫</photoUrl><photoUrl>$</photoUrl><photoUrl>R1Cj\\j*Si9J[*\"</photoUrl></photoUrl><status>sold</status></item><item><id>1</id><category><id/><name/></category><name>doggie</name><photoUrl><photoUrl></photoUrl></photoUrl><status>sold</status></item><item><id>4098</id><category><id>6</id><name>name</name></category><name>HH%gmoV6}yrOFf112</name><photoUrl><photoUrl>oygk%6Ftw0tM;SX^`h-</photoUrl><photoUrl>񄞶򳞙񿆌զ󜹰񻗸򳁠</photoUrl><photoUrl>str</photoUrl><photoUrl>x|RH</photoUrl><photoUrl>𙚽󻨮򙝝𮲹򝘨񊨃񊿐</photoUrl><photoUrl>16Z[jU\\@;^mwxA+IV}</photoUrl><photoUrl>cn1i7U=mL^)</photoUrl><photoUrl>񙎯򲠑󀭔󌱌𗹼򰼦󤬫</photoUrl><photoUrl>$</photoUrl><photoUrl>R1Cj\\j*Si9J[*\"</photoUrl></photoUrl><status>sold</status></item><item><id>4112</id><category><id>6</id><name>name</name></category><name>HH%gmoV6}yrOFf112</name><photoUrl><photoUrl>oygk%6Ftw0tM;SX^`h-</photoUrl><photoUrl>񄞶򳞙񿆌զ󜹰񻗸򳁠</photoUrl><photoUrl>str</photoUrl><photoUrl>x|RH</photoUrl><photoUrl>𙚽󻨮򙝝𮲹򝘨񊨃񊿐</photoUrl><photoUrl>16Z[jU\\@;^mwxA+IV}</photoUrl><photoUrl>cn1i7U=mL^)</photoUrl><photoUrl>񙎯򲠑󀭔󌱌𗹼򰼦󤬫</photoUrl><photoUrl>$</photoUrl><photoUrl>R1Cj\\j*Si9J[*\"</photoUrl></photoUrl><status>sold</status></item><item><id>4120</id><category/><name>doggie</name><photoUrl/><status>sold</status></item><item><id>4131</id><category><id>6</id><name>name</name></category><name>HH%gmoV6}yrOFf112</name><photoUrl><photoUrl>oygk%6Ftw0tM;SX^`h-</photoUrl><photoUrl>񄞶򳞙񿆌զ󜹰񻗸򳁠</photoUrl><photoUrl>str</photoUrl><photoUrl>x|RH</photoUrl><photoUrl>𙚽󻨮򙝝𮲹򝘨񊨃񊿐</photoUrl><photoUrl>16Z[jU\\@;^mwxA+IV}</photoUrl><photoUrl>cn1i7U=mL^)</photoUrl><photoUrl>񙎯򲠑󀭔󌱌𗹼򰼦󤬫</photoUrl><photoUrl>$</photoUrl><photoUrl>R1Cj\\j*Si9J[*\"</photoUrl></photoUrl><status>sold</status></item><item><id>4132</id><category><id>6</id><name>name</name></category><name>HH%gmoV6}yrOFf112</name><photoUrl><photoUrl>oygk%6Ftw0tM;SX^`h-</photoUrl><photoUrl>񄞶򳞙񿆌զ󜹰񻗸򳁠</photoUrl><photoUrl>str</photoUrl><photoUrl>x|RH</photoUrl><photoUrl>𙚽󻨮򙝝𮲹򝘨񊨃񊿐</photoUrl><photoUrl>16Z[jU\\@;^mwxA+IV}</photoUrl><photoUrl>cn1i7U=mL^)</photoUrl><photoUrl>񙎯򲠑󀭔󌱌𗹼򰼦󤬫</photoUrl><photoUrl>$</photoUrl><photoUrl>R1Cj\\j*Si9J[*\"</photoUrl></photoUrl><status>sold</status></item><item><id>4133</id><category/><name>2MputPw</name><photoUrl><photoUrl>%g{</photoUrl></photoUrl><status>sold</status></item><item><id>4134</id><category/><name>2MputPw</name><photoUrl><photoUrl>%g{</photoUrl></photoUrl><status>sold</status></item><item><id>4139</id><category/><name>do%cQA</name><photoUrl><photoUrl>sj6AS:N&lt;|fX1>+ps5|</photoUrl><photoUrl>str</photoUrl><photoUrl>str</photoUrl><photoUrl>0)0$oYk0</photoUrl><photoUrl>񐬜񭣕񎮿󺖯􆴳􄿎󷬹</photoUrl><photoUrl>𽱵򪀁򛹅򟫛󑖧񂰒󈤄</photoUrl></photoUrl><status>sold</status></item><item><id>4140</id><category/><name>do%cQA</name><photoUrl><photoUrl>sj6AS:N&lt;|fX1>+ps5|</photoUrl><photoUrl>str</photoUrl><photoUrl>str</photoUrl><photoUrl>0)0$oYk0</photoUrl><photoUrl>񐬜񭣕񎮿󺖯􆴳􄿎󷬹</photoUrl><photoUrl>𽱵򪀁򛹅򟫛󑖧񂰒󈤄</photoUrl></photoUrl><status>sold</status></item><item><id>4146</id><category><id>6</id><name>name</name></category><name>doggie</name><photoUrl><photoUrl>򂮍򢁋󿪥񎓬񔥩󿶁</photoUrl><photoUrl>str</photoUrl><photoUrl>󟲿񩖧󙺠𨩥𺫞󃾪</photoUrl></photoUrl><tag><tag><id/><name/></tag></tag><status>sold</status></item><item><id>4156</id><category/><name>doggie</name><photoUrl><photoUrl>Ks!w2N)aG1$:OL</photoUrl><photoUrl>d</photoUrl><photoUrl>!c4oA]MO-G&amp;1qj4K</photoUrl><photoUrl>str</photoUrl><photoUrl>;_Iv8%O)</photoUrl><photoUrl>(</photoUrl><photoUrl>9bJN[7SGoEK#M}cXKi+pl\"Z{%JFW{+](n_8>[*{o*>^[vIq3(5MDJ</photoUrl></photoUrl><tag><tag><id>1</id><name>name</name></tag><tag><id>1</id><name>name</name></tag></tag><status>pending</status></item><item><id>4157</id><category/><name>doggie</name><photoUrl><photoUrl>Ks!w2N)aG1$:OL</photoUrl><photoUrl>d</photoUrl><photoUrl>!c4oA]MO-G&amp;1qj4K</photoUrl><photoUrl>str</photoUrl><photoUrl>;_Iv8%O)</photoUrl><photoUrl>(</photoUrl><photoUrl>9bJN[7SGoEK#M}cXKi+pl\"Z{%JFW{+](n_8>[*{o*>^[vIq3(5MDJ</photoUrl></photoUrl><tag><tag><id>1</id><name>name</name></tag><tag><id>1</id><name>name</name></tag></tag><status>pending</status></item><item><id>4203</id><category/><name>str</name><photoUrl/><status>sold</status></item><item><id>271</id><category/><name>doggie</name><photoUrl><photoUrl>str</photoUrl><photoUrl>str</photoUrl><photoUrl>)D_Odu[Hl(}h^c>M</photoUrl><photoUrl>𮺃󓟠򲂲󨺩򟦯񍖶񁮽</photoUrl><photoUrl>iK[}*&amp;8u2</photoUrl><photoUrl>2p&lt;y:@l-'&amp;isD[`+:0P</photoUrl><photoUrl>&amp;w&lt;YY\\MCd&lt;Dz>7V';</photoUrl><photoUrl>q*Q(N92W2P{5pP</photoUrl><photoUrl>str</photoUrl><photoUrl>!bQ8fB]&lt;tmK(</photoUrl></photoUrl><tag><tag><id>1</id><name>name</name></tag><tag><id>1</id><name>name</name></tag><tag><id/><name/></tag><tag><id>-4</id><name/></tag></tag><status>pending</status></item><item><id>384</id><category><id>6</id><name>name</name></category><name>doggie</name><photoUrl><photoUrl>򂮍򢁋󿪥񎓬񔥩󿶁</photoUrl><photoUrl>str</photoUrl><photoUrl>󟲿񩖧󙺠𨩥𺫞󃾪</photoUrl></photoUrl><tag><tag><id/><name/></tag></tag><status>sold</status></item><item><id>385</id><category><id>6</id><name>name</name></category><name>doggie</name><photoUrl><photoUrl>򂮍򢁋󿪥񎓬񔥩󿶁</photoUrl><photoUrl>str</photoUrl><photoUrl>󟲿񩖧󙺠𨩥𺫞󃾪</photoUrl></photoUrl><tag><tag><id/><name/></tag></tag><status>sold</status></item></List>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275093)\n",
-            "text": "Authentication Bypass in 'GET /pet/findByStatus'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275093)"
-          },
-          "ruleId": "auth-bypass"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Invalid Response Spec (unspecified status code: 401) in 'POST /pet/{petId}/uploadImage'.\n\n# Sample Request\n\n```http\nPOST /v3/pet/-5/uploadImage HTTP/1.1\ncontent-type: multipart/form-data; boundary=41333984b86ea7b3-6ade1a448401ceb6-b42a43e0f2636aa7-a0fb92749546b97a\nx-mapi-program-uuid: 8e929111-f348-45ce-96bf-316bb33c2025\n\n--41333984b86ea7b3-6ade1a448401ceb6-b42a43e0f2636aa7-a0fb92749546b97a\r\nContent-Disposition: form-data; name=\"file\"; filename=\"file.txt\"\r\nContent-Type: application/octet-stream\r\n\r\n\"]XJ\\\\n^Gpz]\\\"ww^x@\"\r\n--41333984b86ea7b3-6ade1a448401ceb6-b42a43e0f2636aa7-a0fb92749546b97a--\r\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 401 Unauthorized\ncache-control: no-store\npragma: no-cache\nwww-authenticate: Bearer realm=\"oauth2-resource\", error=\"unauthorized\", error_description=\"Full authentication is required to access this resource\"\nx-content-type-options: nosniff\nx-xss-protection: 1; mode=block\nx-frame-options: DENY\ncontent-type: application/xml;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:19:11 GMT\n\n<UnauthorizedException><error>unauthorized</error><error_description>Full authentication is required to access this resource</error_description></UnauthorizedException>\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275094)\n",
-            "text": "Invalid Response Spec in 'POST /pet/{petId}/uploadImage'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275094)"
-          },
-          "ruleId": "invalid-response-spec (unspecified status code: 401)"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Internal Server Error in 'GET /store/order/{orderId}'.\n\n# Sample Request\n\n```http\nGET /v3/store/order/;get-help HTTP/1.1\napi_key: <REDACTED>\nauthorization: <REDACTED>\nx-mapi-program-uuid: 37038d65-848c-45f0-9298-7435f6e26a77\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 500 Internal Server Error\ncontent-type: application/json;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:19:14 GMT\nconnection: close\n\n{\n  \"error\": \"Internal Server Error\",\n  \"message\": \"The request was rejected because the URL contained a potentially malicious String \\\";\\\"\",\n  \"path\": \"/v3/store/order/;get-help\",\n  \"status\": 500,\n  \"timestamp\": \"2021-11-17T22:19:14.936Z\"\n}\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275095)\n",
-            "text": "Internal Server Error in 'GET /store/order/{orderId}'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275095)"
-          },
-          "ruleId": "internal-server-error"
-        },
-        {
-          "codeFlows": [],
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Authentication Bypass in 'POST /pet/{petId}/uploadImage'.\n\n# Sample Request\n\n```http\nPOST /v3/pet/0/uploadImage HTTP/1.1\ncontent-type: multipart/form-data; boundary=b1bd9b3d34a09d44-ca7d057c77ed110f-cc221d639b4a5398-f81ed13b9a4776c2\napi_key: -key]-U#R6;0`rk\\\\)=\nauthorization: <REDACTED>\nx-mapi-program-uuid: 1aa148e7-9ef9-4649-aad1-35c5078d2a41\n\n--b1bd9b3d34a09d44-ca7d057c77ed110f-cc221d639b4a5398-f81ed13b9a4776c2\r\nContent-Disposition: form-data; name=\"file\"; filename=\"file.txt\"\r\nContent-Type: application/octet-stream\r\n\r\n\"str\"\r\n--b1bd9b3d34a09d44-ca7d057c77ed110f-cc221d639b4a5398-f81ed13b9a4776c2--\r\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\nx-content-type-options: nosniff\nx-xss-protection: 1; mode=block\ncache-control: no-cache, no-store, max-age=0, must-revalidate\npragma: no-cache\nexpires: 0\nx-frame-options: DENY\ncontent-type: application/json;charset=UTF-8\ntransfer-encoding: chunked\ndate: Wed, 17 Nov 2021 22:19:28 GMT\n\n{\n  \"code\": 200,\n  \"message\": \"additionalMetadata: null\\nFile uploaded to ./file, 5 bytes\",\n  \"type\": null\n}\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/8193/275096)\n",
-            "text": "Authentication Bypass in 'POST /pet/{petId}/uploadImage'. [Details](https://mayhem4api.forallsecure.com/issues/8193/275096)"
-          },
-          "ruleId": "auth-bypass"
         }
       ],
       "tool": {
@@ -911,24 +371,20 @@
           "rules": [
             {
               "defaultConfiguration": {
-                "level": "error"
+                "level": "warning"
               },
               "fullDescription": {
-                "text": "The API returned an Internal Server Error, indicating an unhandled exception."
+                "text": "The response from the API was not described in the provided spec."
               },
               "help": {
-                "text": "Consider adding consistent error handling mechanisms which are capable of\nhandling any user input to your API. Ideally, the error would return a 4xx\nstatus like '400 Bad Request', and provide meaningful details to end-users so\nthey understand how to fix their request.\n\nAlso, ensure that in production those error messages are not providing\ninformation useful to an attacker, like a stacktrace.\n"
+                "text": "\nMake sure that each specified endpoint's \"responses\" field is in sync with\nwhat the code actually produces:\n * HTTP status codes that the endpoint returns are specified\n * Content-Type that the endpoint returns are specified\n"
               },
-              "id": "internal-server-error",
+              "id": "invalid-response-spec",
               "properties": {
-                "tags": [
-                  "CWE-20",
-                  "CWE-391",
-                  "CWE-550"
-                ]
+                "tags": []
               },
               "shortDescription": {
-                "text": "Internal Server Error"
+                "text": "Invalid Response Spec"
               }
             },
             {
@@ -963,66 +419,12 @@
               "help": {
                 "text": "\nMake sure that each specified endpoint's \"responses\" field is in sync with\nwhat the code actually produces:\n * HTTP status codes that the endpoint returns are specified\n * Content-Type that the endpoint returns are specified\n"
               },
-              "id": "invalid-response-spec",
-              "properties": {
-                "tags": []
-              },
-              "shortDescription": {
-                "text": "Invalid Response Spec"
-              }
-            },
-            {
-              "defaultConfiguration": {
-                "level": "warning"
-              },
-              "fullDescription": {
-                "text": "The response from the API was not described in the provided spec."
-              },
-              "help": {
-                "text": "\nMake sure that each specified endpoint's \"responses\" field is in sync with\nwhat the code actually produces:\n * HTTP status codes that the endpoint returns are specified\n * Content-Type that the endpoint returns are specified\n"
-              },
               "id": "invalid-response-spec (got a non-empty response when an empty response was specified)",
               "properties": {
                 "tags": []
               },
               "shortDescription": {
                 "text": "Invalid Response Spec (got a non-empty response when an empty response was specified)"
-              }
-            },
-            {
-              "defaultConfiguration": {
-                "level": "warning"
-              },
-              "fullDescription": {
-                "text": "The response from the API was not described in the provided spec."
-              },
-              "help": {
-                "text": "\nMake sure that each specified endpoint's \"responses\" field is in sync with\nwhat the code actually produces:\n * HTTP status codes that the endpoint returns are specified\n * Content-Type that the endpoint returns are specified\n"
-              },
-              "id": "invalid-response-spec (unspecified status code: 200)",
-              "properties": {
-                "tags": []
-              },
-              "shortDescription": {
-                "text": "Invalid Response Spec (unspecified status code: 200)"
-              }
-            },
-            {
-              "defaultConfiguration": {
-                "level": "warning"
-              },
-              "fullDescription": {
-                "text": "The response from the API was not described in the provided spec."
-              },
-              "help": {
-                "text": "\nMake sure that each specified endpoint's \"responses\" field is in sync with\nwhat the code actually produces:\n * HTTP status codes that the endpoint returns are specified\n * Content-Type that the endpoint returns are specified\n"
-              },
-              "id": "invalid-response-spec (unspecified status code: 400)",
-              "properties": {
-                "tags": []
-              },
-              "shortDescription": {
-                "text": "Invalid Response Spec (unspecified status code: 400)"
               }
             },
             {
@@ -1071,16 +473,16 @@
               "help": {
                 "text": "\nMake sure that each specified endpoint's \"responses\" field is in sync with\nwhat the code actually produces:\n * HTTP status codes that the endpoint returns are specified\n * Content-Type that the endpoint returns are specified\n"
               },
-              "id": "invalid-response-spec ($.type: expected string)",
+              "id": "invalid-response-spec (unspecified status code: 200)",
               "properties": {
                 "tags": []
               },
               "shortDescription": {
-                "text": "Invalid Response Spec ($.type: expected string)"
+                "text": "Invalid Response Spec (unspecified status code: 200)"
               }
             }
           ],
-          "semanticVersion": "2.7.11"
+          "semanticVersion": "2.7.18"
         }
       }
     }
