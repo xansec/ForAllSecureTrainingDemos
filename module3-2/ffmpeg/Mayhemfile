@@ -1,0 +1,19 @@
+version: '1.15'
+project: abrewer/ffmpeg
+target: ffmpeg
+baseimage: $MAYHEM_DOCKER_REGISTRY/abrewer/ffmpeg:latest
+advanced_triage: true 
+
+tasks:
+  - name: exploitability_factors
+  - name: regression_testing
+  - name: behavior_testing
+  - name: coverage_analysis
+cmds:
+
+  - cmd: /usr/local/bin/ffmpeg -i @@ -f null ignore.wav
+    env:
+      LD_LIBRARY_PATH: /usr/local/lib
+    dictionary: /dictionaries/webm.dict
+
+
