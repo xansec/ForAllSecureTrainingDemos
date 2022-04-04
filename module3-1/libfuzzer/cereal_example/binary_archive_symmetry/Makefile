@@ -2,17 +2,18 @@ CXX=clang++
 FUZZ=./fuzz_binary_archive_symmetry
 
 target:
-	$(CXX) -g -O1 -fsanitize=fuzzer,address fuzz_binary_archive_symmetry.cpp -o fuzz_binary_archive_symmetry
-fuzz:
-	$(FUZZ) corpus -max_len=100
-build-gcov:
-	$(CXX) --coverage fuzz_binary_archive_symmetry.cpp -c 
-	$(CXX) --coverage fuzz_binary_archive_symmetry.o -o fuzz_binary_archive_symmetry
-run-gcov: 
-	gcov -abcfu fuzz_binary_archive_symmetry.cpp -m
-run-lcov:
-	lcov --directory . --zerocounters
-	lcov --directory . --capture --output-file cereal_bin_ar.info
-	genhtml -o lcov-output/ cereal_bin_ar.info
+	$(CXX) -g -O1 -fsanitize=fuzzer,address fuzz_binary_archive_symmetry.cc -o fuzz_binary_archive_symmetry
+fuzz: target
+	$(FUZZ) ./tests -max_len=100
+build-cov:
+	$(CXX) -fsanitize=fuzzer,address -fprofile-instr-generate -fcoverage-mapping -o fuzz_binary_archive_symmetry fuzz_binary_archive_symmetry.cc
+run-cov: build-cov
+	LLVM_PROFILE_FILE="fuzz_binary_archive_symmetry.profraw" ./fuzz_binary_archive_symmetry ./tests -max_len=100 -max_total_time=15
+gen-cov: run-cov
+	llvm-profdata merge fuzz_binary_archive_symmetry.profraw -o fuzz_binary_archive_symmetry.profdata
+show-cov-file: gen-cov
+	llvm-cov report ./fuzz_binary_archive_symmetry --instr-profile=fuzz_binary_archive_symmetry.profdata
+show-cov-line: gen-cov
+	llvm-cov show ./fuzz_binary_archive_symmetry --instr-profile=fuzz_binary_archive_symmetry.profdata
 clean:
-	-rm -rf fuzz_binary_archive_symmetry *.o *.out *.fuzz *.TXT *.html *.info *.css *.gcov *.gz *.gcda *.gcno home/ bits/ ext/ usr/ lcov-output/
+	-rm -rf fuzz_binary_archive_symmetry *.o *.out *.fuzz *.profdata *.profraw 

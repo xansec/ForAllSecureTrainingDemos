@@ -3,6 +3,11 @@
 #include <cereal/types/string.hpp>
 #include <cereal/archives/binary.hpp>
 
+int neverCalled() {
+  return 1337;
+}
+
+
 extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size)
 {
 	std::string o_string(data, data+size);
@@ -18,6 +23,7 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size)
 		cereal::BinaryInputArchive iar(is);
 		iar(i_string);
 	}
+	
 	if (i_string != o_string) abort();
 
 	return 0;
