@@ -1,5 +1,6 @@
 CXX=clang++
 FUZZ=./fuzz_binary_archive_symmetry
+TESTS=./corpus
 
 target:
 	$(CXX) -g -O1 -fsanitize=fuzzer,address fuzz_binary_archive_symmetry.cc -o fuzz_binary_archive_symmetry
@@ -8,7 +9,7 @@ fuzz: target
 build-cov:
 	$(CXX) -fsanitize=fuzzer,address -fprofile-instr-generate -fcoverage-mapping -o fuzz_binary_archive_symmetry fuzz_binary_archive_symmetry.cc
 run-cov: build-cov
-	LLVM_PROFILE_FILE="fuzz_binary_archive_symmetry.profraw" ./fuzz_binary_archive_symmetry ./tests -max_len=100 -max_total_time=15
+	LLVM_PROFILE_FILE="fuzz_binary_archive_symmetry.profraw" ./fuzz_binary_archive_symmetry $(TESTS) -max_len=100 -max_total_time=15
 gen-cov: run-cov
 	llvm-profdata merge fuzz_binary_archive_symmetry.profraw -o fuzz_binary_archive_symmetry.profdata
 show-cov-file: gen-cov

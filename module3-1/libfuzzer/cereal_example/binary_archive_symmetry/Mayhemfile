@@ -1,7 +1,10 @@
-version: '2.0'
-image: $MAYHEM_DOCKER_REGISTRY/abrewer/cereal-example-libfuzzer:latest
+#version: '2.0'
+version: '1.16'
+#image: $MAYHEM_DOCKER_REGISTRY/abrewer/cereal-example-libfuzzer:latest
+baseimage: $MAYHEM_DOCKER_REGISTRY/abrewer/cereal-example-libfuzzer:latest
 duration: 600
-project: xansec/cereal-libfuzzer
+#project: xansec/cereal-libfuzzer
+project: abrewer/cereal-libfuzzer
 target: binary-archive-symmetry
 cmds:
   - cmd: /fuzz_binary_archive_symmetry
