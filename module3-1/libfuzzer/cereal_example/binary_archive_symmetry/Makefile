@@ -5,7 +5,7 @@ TESTS=./corpus
 target:
 	$(CXX) -g -O1 -fsanitize=fuzzer,address fuzz_binary_archive_symmetry.cc -o fuzz_binary_archive_symmetry
 fuzz: target
-	$(FUZZ) ./tests -max_len=100
+	$(FUZZ) $(TESTS) -max_len=100
 build-cov:
 	$(CXX) -fsanitize=fuzzer,address -fprofile-instr-generate -fcoverage-mapping -o fuzz_binary_archive_symmetry fuzz_binary_archive_symmetry.cc
 run-cov: build-cov
