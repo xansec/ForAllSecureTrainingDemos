@@ -6,7 +6,6 @@ target: lighttpd
 advanced_triage: true
 tasks:
   - name: exploitability_factors
-  - name: regression_testing
   - name: behavior_testing
   - name: coverage_analysis
 cmds:
