@@ -1,5 +1,5 @@
-version: '1.13'
-baseimage: '$MAYHEM_DOCKER_REGISTRY/forallsecure/tutorial/lighttpd:1.4.52'
+version: '2.0'
+image: 'forallsecure/lighttpd:fixed'
 duration: 120
 project: abrewer/demo
 target: lighttpd 
@@ -8,4 +8,4 @@ cmds:
     network:
       url: 'tcp://localhost:80'
       timeout: 2
-      is_client: false
+      client: false
