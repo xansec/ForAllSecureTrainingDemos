@@ -1,8 +1,14 @@
 version: '2.0'
 image: 'forallsecure/lighttpd:vulnerable'
 duration: 120
-project: abrewer/fuzzme
+project: xansec/lighttpd
 target: lighttpd
+advanced_triage: true
+tasks:
+  - name: exploitability_factors
+  - name: regression_testing
+  - name: behavior_testing
+  - name: coverage_analysis
 cmds:
   - cmd: /usr/local/sbin/lighttpd -D -f /usr/local/etc/lighttpd.conf
     network:
