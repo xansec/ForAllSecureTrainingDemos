@@ -1,7 +1,7 @@
-version: '2.0'
-image: 'forallsecure/lighttpd:vulnerable'
+version: '1.17'
+baseimage: 'forallsecure/lighttpd:vulnerable'
 duration: 120
-project: xansec/lighttpd
+project: lighttpd
 target: lighttpd
 advanced_triage: true
 tasks:
@@ -13,4 +13,4 @@ cmds:
     network:
       url: 'tcp://localhost:80'
       timeout: 2
-      client: false
+      is_client: false

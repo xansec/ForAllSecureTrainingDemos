@@ -1,7 +1,7 @@
-version: '2.0'
-image: 'forallsecure/lighttpd:fixed'
+version: '1.17'
+baseimage: 'forallsecure/lighttpd:fixed'
 duration: 120
-project: xansec/lighttpd
+project: lighttpd
 target: lighttpd
 advanced_triage: true
 tasks:
@@ -14,4 +14,4 @@ cmds:
     network:
       url: 'tcp://localhost:80'
       timeout: 2
-      client: false
+      is_client: false
