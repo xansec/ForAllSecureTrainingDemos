@@ -56,16 +56,16 @@ int triggerCWEs(char *buf, unsigned len)
   int *arr = (int *)malloc(len * sizeof(int));
 
   switch(buf[0]) {
-    
+
     #ifdef BASIC
-    #ifdef CWE20	  
+    #ifdef CWE20
     //CWE-20: Improper Input Validation
     case 0 :
-      p = &buf[0]; // Defect: allocating and then freeing memory incorrectly from user input 
+      p = &buf[0]; // Defect: allocating and then freeing memory incorrectly from user input
       free(p);
       break;
     #endif
-    
+
     #ifdef CWE121
     //CWE-121: Stack-Based Buffer Overflow
     case 1 :
@@ -120,7 +120,7 @@ int triggerCWEs(char *buf, unsigned len)
     /*************************************************************************/
 
     //Advanced Triage
-     
+
     #ifdef ADVANCED
     #ifdef CWE119
     //CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer
@@ -192,11 +192,11 @@ int triggerCWEs(char *buf, unsigned len)
     /*************************************************************************/
 
     //Sanitizer
-    
+
 
    #ifdef SANITIZE
      // code
-   #endif 
+   #endif
 
 
   }
