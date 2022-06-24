@@ -10,6 +10,10 @@ advanceds=CWE119 CWE125a CWE131 CWE401 CWE457 CWE590 CWE704 CWE787a CWE913a
 advanced_flags=-DADVANCED -DCWE119 -DCWE125a -DCWE131 -DCWE401 -DCWE457 -DCWE590 -DCWE704 -DCWE787a -DCWE913a
 #TBD: sanitizers=<...>
 
+.PHONY: docker
+docker:
+	docker build -t $(USER)/cwesuite .
+
 .PHONY: all
 all:
 	$(CC) $(CCFLAGS) $(basic_flags) $(advanced_flags) -o all $(filename)
