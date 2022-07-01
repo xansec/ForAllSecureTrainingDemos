@@ -1,4 +1,4 @@
-version: '1.15'
+version: '1.17'
 project: abrewer/ffmpeg
 target: ffmpeg
 baseimage: $MAYHEM_DOCKER_REGISTRY/abrewer/ffmpeg:latest
