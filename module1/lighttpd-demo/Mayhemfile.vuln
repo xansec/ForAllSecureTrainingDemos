@@ -1,5 +1,5 @@
-version: '1.17'
-baseimage: 'forallsecure/lighttpd:vulnerable'
+
+image: 'forallsecure/lighttpd:vulnerable'
 duration: 120
 project: lighttpd
 target: lighttpd
@@ -13,4 +13,4 @@ cmds:
     network:
       url: 'tcp://localhost:80'
       timeout: 2
-      is_client: false
+      client: false

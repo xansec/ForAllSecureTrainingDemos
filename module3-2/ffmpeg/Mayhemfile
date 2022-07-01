@@ -1,7 +1,7 @@
-version: '1.15'
+
 project: abrewer/ffmpeg
 target: ffmpeg
-baseimage: $MAYHEM_DOCKER_REGISTRY/abrewer/ffmpeg:latest
+image: $MAYHEM_DOCKER_REGISTRY/abrewer/ffmpeg:latest
 advanced_triage: true 
 
 tasks:

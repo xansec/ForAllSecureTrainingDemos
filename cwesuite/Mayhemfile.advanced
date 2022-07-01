@@ -1,7 +1,7 @@
-version: '1.17'
+
 project: abrewer/cwesuite
 target: advanced
-baseimage: $MAYHEM_DOCKER_REGISTRY/abrewer/cwesuite:latest 
+image: $MAYHEM_DOCKER_REGISTRY/abrewer/cwesuite:latest 
 
 advanced_triage: true
 tasks:
