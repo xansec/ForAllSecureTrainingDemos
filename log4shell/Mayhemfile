@@ -1,5 +1,5 @@
-version: '1.17'
-baseimage: $MAYHEM_DOCKER_REGISTRY/abrewer/cves/log4shell:latest
+
+image: $MAYHEM_DOCKER_REGISTRY/abrewer/cves/log4shell:latest
 project: log4j
 target: log4shell
 cmds:
