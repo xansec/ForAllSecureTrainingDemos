@@ -1,4 +1,4 @@
-version: '1.13'
+version: '1.17'
 baseimage: $MAYHEM_DOCKER_REGISTRY/abrewer/bitcoin/hfuzz
 duration: 3600 
 project: bitcoin
