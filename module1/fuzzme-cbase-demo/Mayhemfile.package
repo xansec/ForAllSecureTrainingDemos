@@ -1,4 +1,4 @@
-version: '1.13'
+version: '1.17'
 baseimage: $MAYHEM_DOCKER_REGISTRY/forallsecure/debian-buster:latest
 duration: 120
 project: fuzzme
