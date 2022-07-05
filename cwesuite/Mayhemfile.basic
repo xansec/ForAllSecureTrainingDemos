@@ -3,7 +3,7 @@ project: abrewer/cwesuite
 target: basic 
 image: $MAYHEM_DOCKER_REGISTRY/abrewer/cwesuite:latest 
 
-advanced_triage: true
+advanced_triage: false 
 tasks:
   - name: exploitability_factors
   - name: regression_testing
