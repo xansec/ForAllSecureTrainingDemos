@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stddef.h>
 #include <unistd.h>
+#include <sys/mman.h>
 
 #define BLOCK_SIZE 256
 
@@ -54,6 +55,8 @@ int triggerCWEs(char *buf, unsigned len)
   unsigned var;
   char *p;
   int *arr = (int *)malloc(len * sizeof(int));
+  int *arr2 = mmap(NULL, 4096, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
+  void (*fn)(void) = NULL;
 
   switch(buf[0]) {
 
@@ -105,14 +108,15 @@ int triggerCWEs(char *buf, unsigned len)
     #ifdef CWE787b
     //CWE-787: Out-of-bounds Write
     case 6 :
-      buf[1 - len] = 'c'; //Defect: writing a character past the length of the buffer
+      arr2[4097] = 'c'; //Defect: writing a character past the length of the buffer
       break;
     #endif
 
     #ifdef CWE913b
     //CWE-913: Improper Control of Dynamically-Managed Code Resources
     case 7 :
-      arr[buf[len - 1]] = buf[len - 2]; //Defect: input might overflow and point to a malicious function
+      fn = (void *)(*(unsigned long long*)buf);
+      fn(); //Defect: call a user-controlled function pointer
       break;
     #endif
     #endif
@@ -177,14 +181,15 @@ int triggerCWEs(char *buf, unsigned len)
     #ifdef CWE787a
     //CWE-787: Out-of-bounds Write
     case 15 :
-      buf[len + 1] = 'c'; //Defect: writing a character past the length of the buffer
+      arr2[4097] = 'c'; //Defect: writing a character past the length of the buffer
       break;
     #endif
 
     #ifdef CWE913a
     //CWE-913: Improper Control of Dynamically-Managed Code Resources
     case 16 :
-      arr[buf[len - 1]] = buf[len - 2]; //Defect: input might overflow and point to a malicious function
+      fn = (void *)(*(unsigned long long*)buf);
+      fn(); //Defect: call a user-controlled function pointer
       break;
    #endif
    #endif
