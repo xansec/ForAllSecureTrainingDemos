@@ -5,9 +5,9 @@ image: $MAYHEM_DOCKER_REGISTRY/abrewer/cwesuite:latest
 
 advanced_triage: true
 tasks:
-  - name: exploitability_factors
+#  - name: exploitability_factors
   - name: regression_testing
-  - name: behavior_testing
+#  - name: behavior_testing
 
 cmds:
 
