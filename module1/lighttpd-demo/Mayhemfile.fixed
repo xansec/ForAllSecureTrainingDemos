@@ -1,8 +1,8 @@
 version: '1.17'
-baseimage: 'forallsecure/lighttpd:fixed'
+baseimage: baseimage: '$MAYHEM_DOCKER_REGISTRY/forallsecure/tutorial/lighttpd:1.4.52'
 duration: 120
 project: lighttpd
-target: lighttpd
+target: lighttpd-run
 advanced_triage: true
 tasks:
   - name: exploitability_factors
