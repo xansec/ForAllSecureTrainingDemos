@@ -1,0 +1,7 @@
+image: $MAYHEM_DOCKER_REGISTRY/abrewer/fuzzme/python-atheris:latest
+duration: 120
+project: fuzzme
+target: python-atheris
+cmds:
+  - cmd: /FuzzMe.py 
+    libfuzzer: true
