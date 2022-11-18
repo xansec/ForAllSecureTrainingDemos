@@ -4,7 +4,7 @@ RUN export RUSTFLAGS="-Znew-llvm-pass-manager=no"
 RUN mkdir /fuzz
 WORKDIR /fuzz
 COPY . .
-#RUN mv ./corpus /corpus
+#RUN mv ./testsuite /testsuite
 RUN cargo install honggfuzz
 WORKDIR /fuzz/bitcoin_hfuzz_deserialize
 RUN cargo hfuzz build

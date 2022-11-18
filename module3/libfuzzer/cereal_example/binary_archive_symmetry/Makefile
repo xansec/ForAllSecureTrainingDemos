@@ -1,6 +1,6 @@
 CXX=clang++
 FUZZ=./fuzz_binary_archive_symmetry
-TESTS=./corpus
+TESTS=./testsuite
 
 target:
 	$(CXX) -g -O1 -fsanitize=fuzzer,address fuzz_binary_archive_symmetry.cc -o fuzz_binary_archive_symmetry

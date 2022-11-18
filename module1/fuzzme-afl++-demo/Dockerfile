@@ -4,5 +4,5 @@ COPY . .
 RUN make 
 
 # Set to fuzz!
-ENTRYPOINT ["afl-fuzz", "-i", "/corpus", "-o", "/out"]
+ENTRYPOINT ["afl-fuzz", "-i", "/testsuite", "-o", "/out"]
 CMD ["/FuzzMe", "@@"]

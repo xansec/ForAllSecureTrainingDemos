@@ -18,7 +18,7 @@ RUN apt-get update && \
 COPY --from=log4shell-builder /mayhem-log4shell/build/libs/log4shell-all.jar /
 COPY --from=jazzer-builder /jazzer/bazel-bin/jazzer_release.tar.gz /
 RUN tar xvf /jazzer_release.tar.gz
-COPY ./corpus /
+COPY ./testsuite /
 
 CMD ["/jazzer", "--cp=/log4shell-all.jar", "--target_class=com.forallsecure.log4shell.Log4ShellFuzz2"]
 

@@ -17,8 +17,8 @@ COPY --from=builder /fuzz /fuzz
 COPY --from=builder /usr/local/include /usr/local/include
 WORKDIR /fuzz
 RUN make sanitizer
-RUN cp -r /fuzz/corpus /corpus
+RUN cp -r /fuzz/testsuite /testsuite
 
 # Set to fuzz!
-ENTRYPOINT ["honggfuzz", "-f", "/corpus", "--"]
+ENTRYPOINT ["honggfuzz", "-f", "/testsuite", "--"]
 CMD ["/fuzz/fuzz_binary_archive_symmetry"]

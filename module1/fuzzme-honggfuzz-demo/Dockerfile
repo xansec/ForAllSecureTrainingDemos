@@ -11,8 +11,8 @@ COPY --from=0 /usr/lib/x86_64-linux-gnu/libbfd-2.31.1-system.so /usr/lib/x86_64-
 COPY --from=0 /usr/lib/x86_64-linux-gnu/libopcodes-2.31.1-system.so /usr/lib/x86_64-linux-gnu/libopcodes-2.31.1-system.so
 COPY --from=0 /usr/lib/x86_64-linux-gnu/libunwind.so.8 /usr/lib/x86_64-linux-gnu/libunwind.so.8
 COPY --from=0 /usr/lib/x86_64-linux-gnu/libasan.so.5 /usr/lib/x86_64-linux-gnu/libasan.so.5
-#RUN mkdir /corpus && mv ./corpus /corpus
+#RUN mkdir /testsuite && mv ./testsuite /testsuite
 
 # Set to fuzz!
-ENTRYPOINT ["honggfuzz", "-f", "/corpus", "--"]
+ENTRYPOINT ["honggfuzz", "-f", "/testsuite", "--"]
 CMD ["/fuzzme"]

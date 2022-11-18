@@ -5,6 +5,6 @@ QEMU=qemu-aarch64
 all:
 	$(CC) -o $(OUTPUT) -g -static fuzzme.c
 run-qemu:
-	$(QEMU) ./$(OUTPUT) ./corpus/bug
+	$(QEMU) ./$(OUTPUT) ./testsuite/bug
 clean:
 	-rm $(OUTPUT)

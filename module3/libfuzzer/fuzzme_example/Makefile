@@ -8,11 +8,11 @@ sanitizer:
 no-sanitizer:
 	$(CXX) -fsanitize=fuzzer FuzzMe.cpp -o FuzzMe
 fuzz:
-	$(FUZZ) corpus -max_len=1000
+	$(FUZZ) testsuite -max_len=1000
 build-gcov: no-sanitizer
 	-mv FuzzMe-FuzzMe.gcno FuzzMe.gcno
 capture:
-	$(foreach f,$(shell ls ./corpus),./FuzzMe ./corpus/$(f);)
+	$(foreach f,$(shell ls ./testsuite),./FuzzMe ./testsuite/$(f);)
 run-gcov: 
 	mv FuzzMe-FuzzMe.gcda FuzzMe.gcda
 	gcov FuzzMe.cpp -m
