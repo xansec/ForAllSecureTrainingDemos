@@ -176,7 +176,7 @@ if __name__ == '__main__':
         print(parser.print_help())
         sys.exit(1)
 
-    mayhem_api = url + '/api/v1/namespace/' + namespace + '/project/' + project + '/target/' + target
+    mayhem_api = url + '/api/v2/namespace/' + namespace + '/project/' + project + '/target/' + target
     mayhem_headers = {
         'accept': 'application/json',
         'X-Mayhem-Token': ('token ' + token)
