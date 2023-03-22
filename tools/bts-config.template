@@ -1,0 +1,14 @@
+{
+	"gitlab": {
+		"url": "https://my.gitlab.company.com",
+		"username": "name@company.com"
+		"token": "blah",
+		"project-id": 123 
+	},
+	"jira": {
+		"url": "https://my.jira.atlassian.net",
+		"username": "name@company.com",
+		"token": "ABCDEF123456",
+		"project-key": "PKw"
+	}
+}
