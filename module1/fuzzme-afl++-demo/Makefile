@@ -4,6 +4,6 @@ FUZZ=afl-fuzz
 all:
 	$(CXX) -o FuzzMe FuzzMe.cpp 
 fuzz:
-	$(FUZZ) -o out -i corpus/ -- ./FuzzMe 
+	$(FUZZ) -o out -i testsuite/ -- ./FuzzMe 
 clean:
 	-rm -rf FuzzMe *.o *.out *.fuzz 

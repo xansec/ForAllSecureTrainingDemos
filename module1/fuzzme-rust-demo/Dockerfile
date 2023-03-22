@@ -5,7 +5,7 @@ RUN export FUZZ_CXXFLAGS="-O2 -fno-omit-frame-pointer -g -fsanitize=address \
 RUN mkdir /fuzz-source
 WORKDIR /fuzz-source
 COPY . .
-RUN mv ./corpus /corpus
+RUN mv ./testsuite /testsuite
 RUN cargo install honggfuzz
 RUN make base
 RUN cp ./fuzzme-base /
