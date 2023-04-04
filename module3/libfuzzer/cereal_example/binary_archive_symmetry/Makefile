@@ -17,4 +17,4 @@ show-cov-file: gen-cov
 show-cov-line: gen-cov
 	llvm-cov show ./fuzz_binary_archive_symmetry --instr-profile=fuzz_binary_archive_symmetry.profdata
 clean:
-	-rm -rf fuzz_binary_archive_symmetry *.o *.out *.fuzz *.profdata *.profraw 
+	-rm -rf fuzz_binary_archive_symmetry *.o *.out *.fuzz *.profdata *.profraw $(TESTS)

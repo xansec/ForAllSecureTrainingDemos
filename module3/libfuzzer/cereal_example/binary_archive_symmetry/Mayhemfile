@@ -1,4 +1,3 @@
-
 image: $MAYHEM_DOCKER_REGISTRY/abrewer/cereal-libfuzzer:latest
 duration: 600
 project: abrewer/cereal-libfuzzer
@@ -7,3 +6,4 @@ cmds:
   - cmd: /fuzz_binary_archive_symmetry
     libfuzzer: true
     sanitizer: true
+    env: {}
