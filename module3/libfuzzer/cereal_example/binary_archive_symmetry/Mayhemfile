@@ -1,5 +1,5 @@
 
-image: $MAYHEM_DOCKER_REGISTRY/abrewer/cereal-example-libfuzzer:latest
+image: $MAYHEM_DOCKER_REGISTRY/abrewer/cereal-libfuzzer:latest
 duration: 600
 project: abrewer/cereal-libfuzzer
 target: binary-archive-symmetry
