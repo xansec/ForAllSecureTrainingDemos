@@ -1,7 +1,0 @@
-
-image: $MAYHEM_DOCKER_REGISTRY/forallsecure/debian-buster:latest
-duration: 120
-project: fuzzme
-target: c-base
-cmds:
-  - cmd: /home/abrewer/mayhem/demo/module1/fuzzme-cbase-demo/fuzzme @@

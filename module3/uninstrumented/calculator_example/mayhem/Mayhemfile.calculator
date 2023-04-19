@@ -1,0 +1,20 @@
+# Project name that the target belongs to
+project: calculator
+
+# Target name (should be unique within the project)
+target: calculator
+
+# Base image to run the binary in.
+image: $MAYHEM_DOCKER_REGISTRY/calculator:latest
+
+tasks:
+  - name: regression_testing
+  - name: behavior_testing
+  - name: coverage_analysis
+
+advanced_triage: false
+
+# Calculator reads from stdin, so we specify ./calculator
+# and mayhem will supply the security tests
+cmds:
+  - cmd: /build/out/calculator

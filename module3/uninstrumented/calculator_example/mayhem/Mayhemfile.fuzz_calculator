@@ -1,0 +1,19 @@
+# Project name that the target belongs to
+project: calculator
+
+# Target name (should be unique within the project)
+target: fuzz_calculator
+
+# Base image to run the binary in.
+image: $MAYHEM_DOCKER_REGISTRY/calculator:latest
+
+advanced_triage: false
+
+tasks:
+  - name: regression_testing
+  - name: behavior_testing
+  - name: coverage_analysis
+
+
+cmds:
+  - cmd: /build/out/fuzz_calculator
