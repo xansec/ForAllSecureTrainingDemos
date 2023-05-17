@@ -5,6 +5,7 @@ import requests
 import csv
 import datetime as dt
 import json
+import base64
 from requests.auth import HTTPBasicAuth
 import logging
 
@@ -41,12 +42,12 @@ def getIssuesForJob(api, headers, job_id, offset=0):
     try:
         response = session.request('GET', endpoint, headers=headers)
         results = response.json()
-        #if len(results['issues']) == ELEMENTS:
-        #    results.update(getIssuesForJob(api, headers, job_id, (offset + ELEMENTS)))
+        if len(results['items']) == ELEMENTS:
+            results = results | getIssuesForJob(api, headers, job_id, (offset + ELEMENTS))
     except KeyError as e:
         logging.error('KeyError:' + str(e) + ', check your parameters.')
         sys.exit(1)
-    return result['issues']
+    return results['items']
 
 def exportToJira(api, headers, issue_data):
     logging.debug('Entering ' + sys._getframe().f_code.co_name)
@@ -57,7 +58,6 @@ def exportToJira(api, headers, issue_data):
         response = session.request('POST', endpoint, json=issue_data, auth=auth)
         resp_dict = json.loads(response.text)
         print('Issue ' + str(resp_dict['key']) + ' created.')
-        sys.exit(1)
     except KeyError as e:
         logging.error('Issue not created, check your permssions and parameters.')
         logging.error(e)
@@ -163,12 +163,12 @@ if __name__ == '__main__':
     if args.issue:
         issue_id = str(args.issue)
         issue = getIssue(mapi_api, mapi_headers, job_id, issue_id)
-        ticket['fields']['summary'] = 'Mayhem for API ' + str(issue['job_id']) + '/' + str(issue['id']) + ': ' + str(issue['rule_id'])
+        ticket['fields']['summary'] = 'Mayhem issue ' + str(issue['id']) + ', job ' + str(issue['job_id']) + ': ' + str(issue['rule_id'])
         ticket['fields']['description'] = 'Endpoint: ' + str(issue['path']) + '\n' \
-            + 'Method: ' + str(issue['method']) + '\n' \
-            + 'Request: ' + str(issue['request']) + '\n' \
-            + 'Response: ' + str(issue['response']) + '\n' \
-            + 'Discoverd on: ' + str(issue['created_at']) + '\n'
+            + 'Method: ' + str(issue['method']) + '\n\n' \
+            + 'Request: ' + base64.b64decode(issue['request']).decode('utf-8') + '\n\n' \
+            + 'Response: ' + base64.b64decode(issue['response']).decode('utf-8') + '\n\n' \
+            + 'Discovered on: ' + str(issue['created_at']) + '\n'
         # --todo-- Can set more fields here
         if not args.dry_run:
             link = exportToJira(jira_api, jira_headers, ticket)
@@ -178,15 +178,16 @@ if __name__ == '__main__':
     else:
         issues = getIssuesForJob(mapi_api, mapi_headers, job_id)
         for issue in issues:
-            ticket['fields']['summary'] = 'Mayhem for API ' + str(issue['job_id']) + '/' + str(issue['id']) + ': ' + str(issue['rule_id'])
+            ticket['fields']['summary'] = 'Mayhem issue ' + str(issue['id']) + ', job ' + str(issue['job_id']) + ': ' + str(issue['rule_id'])
             ticket['fields']['description'] = 'Endpoint: ' + str(issue['path']) + '\n' \
-                + 'Method: ' + str(issue['method']) + '\n' \
-                + 'Request: ' + str(issue['request']) + '\n' \
-                + 'Response: ' + str(issue['response']) + '\n' \
-                + 'Discoverd on: ' + str(issue['created_at']) + '\n'
-            # --todo-- Can set more fields here
+                + 'Method: ' + str(issue['method']) + '\n\n' \
+                + 'Request: ' + base64.b64decode(issue['request']).decode('utf-8') + '\n\n' \
+                + 'Response: ' + base64.b64decode(issue['response']).decode('utf-8') + '\n\n' \
+                + 'Discovered on: ' + str(issue['created_at']) + '\n'
+                # --todo-- Can set more fields here
             if not args.dry_run:
                 link = exportToJira(jira_api, jira_headers, ticket)
                 print('Link to newly created JIRA issue: ' + str(link))
+                sys.exit(0)
             else:
                 print(ticket)
