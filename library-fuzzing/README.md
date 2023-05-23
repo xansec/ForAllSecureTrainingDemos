@@ -57,8 +57,8 @@ If, for example, you know that an application uses an open source library, it's 
 
 **Note:** This tutorial is for C and C++ libraries. Many details and techniques will be specific to C and C++. Although this tutorial uses Linux, and the exact commands shown will only work on Linux, all the principles and tricks here translate to any platform that supports shared libraries—Windows, Mac OS, iOS, Android and more—albeit with different tools and commands.
 
-### Lab 1 - The Basics
+### [Lab 1 - The Basics](./basics.md)
 
-### Lab 2 - Harnessing Lua
+### [Lab 2 - Harnessing Lua](./libllua.md)
 
-### Lab 3 - Objects Change Things
+### [Lab 3 - Objects Change Things](./objects.md)
