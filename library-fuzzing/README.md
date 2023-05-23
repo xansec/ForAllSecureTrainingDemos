@@ -2,8 +2,6 @@
 
 In this lesson, we'll walk you through how to fuzz C++ applications that may not seem immediately amenable for fuzzing but whose shared libraries can be fuzzed by linking a source C++ harness against the binary.
 
-**Estimated Time:** 10 minutes
-
 ## Objectives
 
 By the end of this lesson, you will be able to:
@@ -11,13 +9,13 @@ By the end of this lesson, you will be able to:
 - Define what a shared library is.
 - Articulate the difference between harnessing libraries vs. applications.
 - Explain how binary-only harnessing works.
-- Walk through an example shared library harness.
+- Walk through an example shared-library harness.
 
 ## Shared Libraries
 
 A shared library...
 
-- Is a .so file on Linux, and a .dll on Windows.
+- Is a `.so` ("shared object") file on Linux, and a `.dll` ("dynamically-linked library") on Windows.
 - Contains compiled code and associated data.
 - Can be shared or used among different programs.
 
@@ -51,3 +49,16 @@ Security experts often need to harness a shared library that is provided without
 
 If, for example, you know that an application uses an open source library, it's better to acquire the source (preferably for the same version as the application uses) and use source-harnessing techniques on that.
 
+## Exercises
+
+### Requirements
+* **Skills:** Basic C/C++ programming, some reverse engineering skills
+* **Tools:** `g++`, `binutils`, and your reverse engineering program of choice (the instructions will utilize Ghidra)
+
+**Note:** This tutorial is for C and C++ libraries. Many details and techniques will be specific to C and C++. Although this tutorial uses Linux, and the exact commands shown will only work on Linux, all the principles and tricks here translate to any platform that supports shared libraries—Windows, Mac OS, iOS, Android and more—albeit with different tools and commands.
+
+### Lab 1 - The Basics
+
+### Lab 2 - Harnessing Lua
+
+### Lab 3 - Objects Change Things
