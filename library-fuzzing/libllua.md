@@ -1,4 +1,4 @@
-### Lab: Harnessing Lua
+## Lab: Harnessing Lua
 
 **File:** [llua_simple.tgz](./llua_simple.tgz)
 
