@@ -1,4 +1,4 @@
-## Objects Change Things
+## Lab 3: Objects Change Things
 
 **File:** [example2.tgz](./example2.tgz)
 
