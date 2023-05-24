@@ -1,4 +1,4 @@
-## Example 1: Basics
+## Lab 1: Basics
 
 **File:** [example1.tgz](./example1.tgz)
 
