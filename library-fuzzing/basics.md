@@ -29,13 +29,9 @@ If you usually use binutils nm without a `-D`, that sometimes works too, but tec
 
 ### Determining Harnessing Function Calls and Sequence
 
-Decide which functions we'd like to call in our harness, and in which order. Typically, this is achieved by mild reverse-engineering of the application or libraries, to find example sequences of how the target functions are being called.
+Decide which functions we'd like to call in our harness, and in which order. Typically, this is achieved by mild reverse-engineering of the application or libraries, to find example sequences of how the target functions are being called. This is relatively easy to do with [Ghidra](https://github.com/NationalSecurityAgency/ghidra). If you load and analyze the example1 binary, the decompilation window reveals the call order of the functions we're interested in.
 
-### Note
-
-This isn't a reverse-engineering tutorial, so if you aren't already comfortable with reverse engineering, just open `main.cpp`. For this program, our harness should pass the output of `MyCustomCxxLib::process_data()` to `my_custom_c_lib_process_data()`, just as seen inside the loop in `example1`'s `main()`.
-
-A harness doesn't need to exactly imitate the application's usage of libraries, there are a variety of issues you can run into when straying too far. In this case, blindly trying to fuzz `my_custom_c_lib_process_data()` alone will cause the library to issue a "bad format!" error, whereas the sequence of `MyCustomCxxLib::process_data()` and then `my_custom_c_lib_process_data()` will work fine. This particular case is somewhat artificial, but stereotypical of real-world harnessing efforts.
+A harness doesn't need to exactly imitate the application's usage of libraries, but there are a variety of issues you can run into when straying too far. In this case, blindly trying to fuzz `my_custom_c_lib_process_data()` alone will cause the library to issue a "bad format!" error, whereas the sequence of `MyCustomCxxLib::process_data()` and then `my_custom_c_lib_process_data()` will work fine. This particular case is somewhat artificial, but stereotypical of real-world harnessing efforts.
 
 ### Creating a Shared Library Harness
 
@@ -55,7 +51,7 @@ owner MyCustomCxxLib {
 extern "C" ? my_custom_c_lib_process_data(???);
 ```
 
-The missing types here are int, void, and char *, int. You could determine this through trial and error, or via reverse engineering.
+The missing types here are int, void, and char *, int. You could determine this with trial and error, but if we load and analyze the libraries in Ghidra, we can look at the decompilation window to see the paramater/return types that we were unable to infer from the symbol demangling process above.
 
 Lastly, see `harness.cxx`, or if you think you know what to do, try writing one on your own first. Ensure that you can compile, run, and fuzz this harness before moving on. Try to re-create `harness.cxx` on your own, to check your understanding.
 
