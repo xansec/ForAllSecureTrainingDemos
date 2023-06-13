@@ -2,7 +2,7 @@ CC=clang
 CFLAGS=-g -c -I /usr/local/include/libprotobuf-mutator
 CXX=clang++
 CXXFLAGS=-g -c -I /usr/local/include/libprotobuf-mutator
-FUZZER_FLAGS=-fsanitize=fuzzer -lonig -lprotobuf -lprotobuf-mutator
+FUZZER_FLAGS=-fsanitize=fuzzer,address -lonig -lprotobuf -lprotobuf-mutator
 PROTOC=protoc
 PROTOCFLAGS=--cpp_out=.
 
@@ -20,7 +20,7 @@ json_writer: json_proto
 jq_writer: jq_proto
 	${CXX} ${CXXFLAGS} jq_writer.cpp
 jq_pair: json_writer jq_writer
-	${CXX} -fsanitize=address ${CXXFLAGS} jq_pair.cpp
+	${CXX} ${CXXFLAGS} jq_pair.cpp
 libfuzzer_macro:
 	${CXX} ${CXXFLAGS} /src/libprotobuf-mutator/src/libfuzzer/libfuzzer_macro.cc
 libfuzzer_mutator:
