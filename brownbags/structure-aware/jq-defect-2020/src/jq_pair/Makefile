@@ -2,7 +2,7 @@ CC=clang
 CFLAGS=-g -c -I /usr/local/include/libprotobuf-mutator
 CXX=clang++
 CXXFLAGS=-g -c -I /usr/local/include/libprotobuf-mutator
-FUZZER_FLAGS=-fsanitize=fuzzer,address -lonig -lprotobuf -lprotobuf-mutator
+FUZZER_FLAGS=-g -fsanitize=fuzzer,address -lonig -lprotobuf -lprotobuf-mutator
 PROTOC=protoc
 PROTOCFLAGS=--cpp_out=.
 
