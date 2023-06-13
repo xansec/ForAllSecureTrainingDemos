@@ -1,0 +1,13 @@
+project: jq-defect-2020
+target: json_generator
+image: $MAYHEM_DOCKER_REGISTRY/abrewer/libprotobuf-demo
+duration: 1200
+
+tasks:
+  - name: exploitability_factors
+  - name: regression_testing
+  - name: behavior_testing
+  - name: coverage_analysis 
+
+cmds:
+-   cmd: /fuzz_json_generator
