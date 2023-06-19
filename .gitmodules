@@ -1,0 +1,3 @@
+[submodule "brownbags/ensemble-fuzzing/mayhem-bazel-example"]
+	path = brownbags/ensemble-fuzzing/mayhem-bazel-example
+	url = git@github.com:ForAllSecure/mayhem-bazel-example.git
