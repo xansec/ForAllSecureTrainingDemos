@@ -12,9 +12,8 @@ RUN git clone https://github.com/google/libprotobuf-mutator
 WORKDIR /src/libprotobuf-mutator
 RUN mkdir build
 WORKDIR build
-RUN cmake .. -GNinja -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_BUILD_TYPE=Debug
 # Dumb hack, see https://github.com/google/libprotobuf-mutator/issues/222
-RUN sed -i 's/descriptor_->requires_utf8_validation()/true/' /src/libprotobuf-mutator/src/field_instance.h
+RUN cmake .. -GNinja -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_BUILD_TYPE=Debug -DLIB_PROTO_MUTATOR_DOWNLOAD_PROTOBUF=ON
 RUN ninja
 RUN ninja install
 
