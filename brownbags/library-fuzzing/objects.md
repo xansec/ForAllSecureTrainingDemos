@@ -1,7 +1,5 @@
 ## Lab 3: Objects Change Things
 
-**File:** [example2.tgz](./example2.tgz)
-
 `example2` is a more complex target, but we'll follow the same general process as we did for `example1` to harness it: reverse engineer the binaries to make working header files, write a harness in C++ that exercises the library (in a way similar to how we see the library being used), and then compile the harness and link it to the library.
 
 When C++ objects are involved, this process requires more work and a greater attention to detail. Functions you'll want to harness may take C++ objects as parameters, which requires your harness to create these C++ objects beforehand. Furthermore, creating and properly initializing C++ objects requires having a correct-enough class definition for the object.

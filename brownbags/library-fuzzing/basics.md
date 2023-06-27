@@ -1,7 +1,5 @@
 ## Lab 1: Basics
 
-**File:** [example1.tgz](./example1.tgz)
-
 example1 is a toy program that makes use of custom shared libraries to echo its command line args back to stdout.
 
 ### Note
