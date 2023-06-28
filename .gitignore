@@ -2,3 +2,4 @@ dropbear
 tools/*.config
 *.gpr
 *.rep
+*.lock*
