@@ -6,4 +6,5 @@ cmds:
  - cmd: /llua_harness @@
    env:
        LD_LIBRARY_PATH: /
+   timeout: 2
 
