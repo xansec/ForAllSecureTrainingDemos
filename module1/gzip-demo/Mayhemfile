@@ -1,0 +1,6 @@
+image: photon
+duration: 120 
+project: fuzzme
+target: gzip
+cmds:
+  - cmd: /bin/toybox gzip -1 -c @@
