@@ -1,8 +1,7 @@
-
-image: $MAYHEM_DOCKER_REGISTRY/abrewer/bitcoin/hfuzz
-duration: 3600 
-project: bitcoin
-target: hfuzz-serialize
+image: $MAYHEM_DOCKER_REGISTRY/abrewer/fuzzme/bitcoin
+duration: 300 
+project: honggfuzz 
+target: bitcoin-hfuzz-serialize
 cmds:
   - cmd: /bitcoin_hfuzz_serialize
     honggfuzz: true
