@@ -1,5 +1,5 @@
 
-image: $MAYHEM_DOCKER_REGISTRY/abrewer/fuzzme/c-base
+image: $MAYHEM_DOCKER_REGISTRY/abrewer/fuzzme/cbase
 duration: 120 
 project: fuzzme
 target: c-base
