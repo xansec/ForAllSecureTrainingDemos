@@ -1,8 +1,0 @@
-{
-	"jira": {
-		"url": "https://my.jira.atlassian.net",
-		"username": "name@company.com",
-		"token": "ABCDEF123456",
-		"project-key": "PKw"
-	}
-}
