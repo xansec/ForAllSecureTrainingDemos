@@ -1,5 +1,5 @@
 
-image: $MAYHEM_DOCKER_REGISTRY/abrewer/fuzzme/c-aarch64:latest
+image: ghcr.io/xansec/fuzzme/c-aarch64:latest
 duration: 120
 project: fuzzme
 target: qemu-aarch64
