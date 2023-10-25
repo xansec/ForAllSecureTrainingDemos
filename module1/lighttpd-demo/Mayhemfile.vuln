@@ -1,7 +1,6 @@
-
-image: 'forallsecure/lighttpd:vulnerable'
+image: forallsecure/lighttpd:vulnerable
 duration: 120
-project: lighttpd
+project: training/lighttpd
 target: lighttpd
 advanced_triage: true
 tasks:
