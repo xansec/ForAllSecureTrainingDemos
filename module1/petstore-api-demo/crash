@@ -1,0 +1,1 @@
+curl -vv -XDELETE 'http://localhost/v3/pet/29' -H 'api_key: :61#"Bff' -H 'api_key: special-key' -H 'content-length: 0' -H 'authorization: r;nbae<\[3vNI;Vg;i@xUx0{o+aG"F"5bjM~aMyg{V!X`rJ[NVWj#1XTw<&7 1c9dd1f;*:W%cS4e("hkn>p;pAY$e2-b661-a490a09aadf8' -H 'x-mapi-program-uuid: 2d0dd010-0a0b-4708-9d99-b0e9f152dac0'
