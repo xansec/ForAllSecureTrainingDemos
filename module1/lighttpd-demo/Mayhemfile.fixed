@@ -1,7 +1,6 @@
-
 image: forallsecure/lighttpd:fixed
 duration: 120
-project: training/lighttpd
+project: lighttpd
 target: lighttpd
 advanced_triage: true
 tasks:
