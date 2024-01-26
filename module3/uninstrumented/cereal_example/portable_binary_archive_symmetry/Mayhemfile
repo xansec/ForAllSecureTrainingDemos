@@ -6,6 +6,10 @@ tasks:
   - name: exploitability_factors
   - name: behavior_testing
   - name: coverage_analysis
+
+testsuite:
+  - file://testsuite
+
 cmds:
-  - cmd: /test_portable_binary_archive_symmetry
+  - cmd: /test_portable_binary_archive_symmetry @@
     env: {}
