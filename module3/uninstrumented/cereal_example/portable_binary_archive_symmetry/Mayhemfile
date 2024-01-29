@@ -1,15 +1,11 @@
-image: ghcr.io/xansec/cereal
-duration: 600
 project: xansec/cereal
 target: portable-binary-archive-symmetry
+image: ghcr.io/xansec/cereal
+duration: 1200
 tasks:
   - name: exploitability_factors
   - name: behavior_testing
   - name: coverage_analysis
-
-testsuite:
-  - file://testsuite
-
 cmds:
   - cmd: /test_portable_binary_archive_symmetry @@
-    env: {}
+    max_length: 65536
