@@ -1,3 +1,9 @@
 [submodule "brownbags/ensemble-fuzzing/mayhem-bazel-example"]
 	path = brownbags/ensemble-fuzzing/mayhem-bazel-example
 	url = git@github.com:ForAllSecure/mayhem-bazel-example.git
+[submodule "module3/mapi"]
+	path = module3/mapi
+	url = git@github.com:ForAllSecure/mapi-action-examples.git
+[submodule "module3/mcode"]
+	path = module3/mcode
+	url = git@github.com:ForAllSecure/mcode-action-examples
