@@ -1,8 +1,0 @@
-{
-	"mayhem": {
-		"url": "https://yoururl.mayhem.security",
-		"username": "<your Mayhem username>",
-		"email": "<your Mayhem email>",
-		"token": "<your Mayhem webtoken>"
-	}
-}
