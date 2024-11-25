@@ -1,4 +1,4 @@
-FROM ubuntu as builder
+FROM ubuntu AS builder
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y git make g++
 ADD . /mayhem
