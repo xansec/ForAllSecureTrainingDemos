@@ -2,6 +2,6 @@
 image: ghcr.io/xansec/fuzzme/c-aarch64:latest
 duration: 120
 project: fuzzme
-target: qemu-aarch64
+target: c-aarch64
 cmds:
   - cmd: /fuzzme @@
